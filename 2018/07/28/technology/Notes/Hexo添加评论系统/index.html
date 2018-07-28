@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 随笔 | 爱在西元前</title>
+  <title>Hexo添加评论系统 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="爱在西元前">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+  <meta name="description" content="在Github上搭建了Hexo博客系统，主题采用yilia，这里给博客添加valine评论系统。 1.首先注册https://leancloud.cn ，创建应用，然后在“设置”中的“应用Key”获取App ID以及App Key.">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo添加评论系统">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/technology/Notes/Hexo添加评论系统/index.html">
 <meta property="og:site_name" content="爱在西元前">
+<meta property="og:description" content="在Github上搭建了Hexo博客系统，主题采用yilia，这里给博客添加valine评论系统。 1.首先注册https://leancloud.cn ，创建应用，然后在“设置”中的“应用Key”获取App ID以及App Key.">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-28T10:38:16.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爱在西元前">
+<meta name="twitter:title" content="Hexo添加评论系统">
+<meta name="twitter:description" content="在Github上搭建了Hexo博客系统，主题采用yilia，这里给博客添加valine评论系统。 1.首先注册https://leancloud.cn ，创建应用，然后在“设置”中的“应用Key”获取App ID以及App Key.">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -153,31 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-technology/Notes/Hexo添加评论系统" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/28/articles/我看到了我的爱恋/" class="archive-article-date">
-  	<time datetime="2018-07-28T08:29:02.984Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/28/articles/我看到了我的爱恋/">我看到了我的爱恋</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo添加评论系统
     </h1>
   
 
@@ -187,50 +175,220 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/articles/我看到了我的爱恋/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/technology/Notes/Hexo添加评论系统/" class="pageViews">0</span>次
   </a>
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" class="archive-article-date">
+  	<time datetime="2018-07-28T10:23:55.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Github上搭建了Hexo博客系统，主题采用yilia，这里给博客添加valine评论系统。</p>
+<p>1.首先注册<a href="https://leancloud.cn" target="_blank" rel="noopener">https://leancloud.cn</a> ，创建应用，然后在“设置”中的“应用Key”获取App ID以及App Key.<br><a id="more"></a><br>2.在Hexo主题中的_config.yml中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#6、Valine https://valine.js.org</span><br><span class="line">valine: </span><br><span class="line"> appid:  #Leancloud应用的appId</span><br><span class="line"> appkey:  #Leancloud应用的appKey</span><br><span class="line"> verify: false #验证码</span><br><span class="line"> notify: false #评论回复提醒</span><br><span class="line"> avatar: &apos;&apos; #评论列表头像样式：&apos;&apos;/mm/identicon/monsterid/wavatar/retro/hide</span><br><span class="line"> avatar_cdn: &apos;https://sdn.geekzu.org/avatar/&apos; #头像CDN</span><br><span class="line"> placeholder: &apos;瞎白话&apos; #评论框占位符</span><br><span class="line"> pageSize: 15 #评论分页</span><br></pre></td></tr></table></figure></p>
+<p>3.打开  yilia/layout/_partial/article.ejs文件，在最后面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if ( !(index &amp;&amp; theme.show_all_link) )&#123; %&gt;</span><br><span class="line">&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey)&#123; %&gt;</span><br><span class="line">  &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .comments&#123;margin:30px;padding:10px;background:#fff&#125;</span><br><span class="line">      @media screen and (max-width:800px)&#123;.comments&#123;margin:auto;padding:10px;background:#fff&#125;&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;%- partial(&apos;post/valine&apos;, &#123;</span><br><span class="line">      key: post.slug,</span><br><span class="line">      title: post.title,</span><br><span class="line">      url: config.url+url_for(post.path)</span><br><span class="line">      &#125;) %&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意这里的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if ( !(index &amp;&amp; theme.show_all_link) )</span><br></pre></td></tr></table></figure></p>
+<p>指的是打开全文才会有评论系统。<br>4.在yilia/layout/_partial/post下创建valine.ejs文件，写入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&apos;//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;</span><br><span class="line">   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;</span><br><span class="line">   new Valine(&#123;</span><br><span class="line">            av: AV,</span><br><span class="line">            el: &apos;#vcomment&apos;,</span><br><span class="line">            notify: notify,</span><br><span class="line">            verify: verify,</span><br><span class="line">            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,</span><br><span class="line">            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,</span><br><span class="line">            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,</span><br><span class="line">            avatar: &quot;&lt;%= theme.valine.avatar %&gt;&quot;,</span><br><span class="line">            avatar_cdn: &quot;&lt;%= theme.valine.avatar_cdn %&gt;&quot;,</span><br><span class="line">            pageSize: &lt;%= theme.valine.pageSize %&gt;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样就完成了。</p>
+<p>详情可以参照</p>
+<ol>
+<li><a href="https://www.xxwhite.com/2017/Valine.html" target="_blank" rel="noopener">https://www.xxwhite.com/2017/Valine.html</a></li>
+<li><a href="https://ioliu.cn/2017/add-valine-comments-to-your-blog/" target="_blank" rel="noopener">https://ioliu.cn/2017/add-valine-comments-to-your-blog/</a></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/my/reward_alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/my/reward_wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">三体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/28/technology/Notes/Hexo添加评论系统/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">win7下MySQL 5.7 版本安装与使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "me6MtDOe9OsBQKDjUoL6ICaw-gzGzoHsz",
+            app_key: "2l8raTqXj6gisW7E9KQoUuF2",
+            placeholder: "ヾﾉ≧∀≦)o 来呀！快活呀！~",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 10
+    });
+</script>
+  </section>
 
 
           </div>
@@ -253,10 +411,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
