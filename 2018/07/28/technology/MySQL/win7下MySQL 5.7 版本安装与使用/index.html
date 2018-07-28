@@ -392,7 +392,26 @@
       .comments{margin:30px;padding:10px;background:#fff}
       @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
     </style>
-    
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "me6MtDOe9OsBQKDjUoL6ICaw-gzGzoHsz",
+            app_key: "2l8raTqXj6gisW7E9KQoUuF2",
+            placeholder: "ヾﾉ≧∀≦)o 来呀！快活呀！~",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 10
+    });
+</script>
   </section>
 
 
