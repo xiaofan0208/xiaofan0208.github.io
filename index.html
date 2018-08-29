@@ -186,13 +186,10 @@
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我们在使用github提交时，有可能会出现，提交的邮箱等不是自己的，设置错误。<br>这时需要修改历史提交记录</p>
 <h3 id="新建仓库信息"><a href="#新建仓库信息" class="headerlink" title="新建仓库信息"></a>新建仓库信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone --bare https://github.com/用户名/库名.git</span><br><span class="line">cd repo.git</span><br></pre></td></tr></table></figure>
-<p>这里的repo.git是已经clone下来的</p>
-<h3 id="使用脚本"><a href="#使用脚本" class="headerlink" title="使用脚本"></a>使用脚本</h3><p>将下面脚本中的中文替换成自己的信息，然后把脚本复制到bash中，回车<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">git filter-branch --env-filter &apos;</span><br><span class="line"></span><br><span class="line">OLD_EMAIL=&quot;旧的邮箱</span><br><span class="line">CORRECT_NAME=&quot;正确的名字&quot;</span><br><span class="line">CORRECT_EMAIL=&quot;正确的邮箱&quot;</span><br><span class="line"></span><br><span class="line">if [ &quot;$GIT_COMMITTER_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_COMMITTER_NAME=&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_COMMITTER_EMAIL=&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">if [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;$OLD_EMAIL&quot; ]</span><br><span class="line">then</span><br><span class="line">    export GIT_AUTHOR_NAME=&quot;$CORRECT_NAME&quot;</span><br><span class="line">    export GIT_AUTHOR_EMAIL=&quot;$CORRECT_EMAIL&quot;</span><br><span class="line">fi</span><br><span class="line">&apos; --tag-name-filter cat -- --branches --tags</span><br></pre></td></tr></table></figure></p>
-<h3 id="提交记录"><a href="#提交记录" class="headerlink" title="提交记录"></a>提交记录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push --force --tags origin &apos;refs/heads/*&apos;</span><br><span class="line">cd ..</span><br><span class="line">rm -rf repo.git</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果提交版本时，出现以下问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error：failed to push some refs to ...</span><br></pre></td></tr></table></figure></p>
-<p>这个问题是因为远程库与本地库不一致造成的，那么我们把远程库同步到本地库就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure></p>
-<p>这条指令的意思是把远程库中的更新合并到本地库中，–rebase的作用是取消掉本地库中刚刚的commit，<br>并把他们接到更新后的版本库之中。</p>
-
+<p>这里的repo.git是已经clone下来的<br>
+        
+          <a class="article-more-a" href="/2018/08/29/technology/Git/【github】修改历史提交记录/#more">more >></a>
+        
       
 
       
@@ -264,7 +261,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/technology/Git/git基本使用/">git使用</a>
+      <a class="article-title" href="/2018/08/29/technology/Git/git基本使用/">git基本使用</a>
     </h1>
   
 
@@ -289,21 +286,9 @@
         <h2 id="使用git关联github"><a href="#使用git关联github" class="headerlink" title="使用git关联github"></a>使用git关联github</h2><h3 id="1-首先在git控制台中生成秘钥，"><a href="#1-首先在git控制台中生成秘钥，" class="headerlink" title="1.首先在git控制台中生成秘钥，"></a>1.首先在git控制台中生成秘钥，</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
 <p>把生成的公钥id_rsa.pub中内容复制到github中创建SSH keys</p>
 <h3 id="2-为git绑定用户，即设置用户名和邮箱"><a href="#2-为git绑定用户，即设置用户名和邮箱" class="headerlink" title="2.为git绑定用户，即设置用户名和邮箱"></a>2.为git绑定用户，即设置用户名和邮箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config  --global user.name   &quot;用户名&quot;</span><br><span class="line">git config  --global user.email  &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="3-上传本地项目到github"><a href="#3-上传本地项目到github" class="headerlink" title="3.上传本地项目到github"></a>3.上传本地项目到github</h3><p>在github上创建仓库phpStudy，然后在本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　git init           //把这个目录变成Git可以管理的仓库</span><br><span class="line">　　git add README.md //文件添加到仓库</span><br><span class="line">　　git add .         //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">　　git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">　　git remote add origin git@github.com:用户名/phpStudy.git //关联远程仓库</span><br><span class="line">　　git push -u origin master    //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-提交文件"><a href="#4-提交文件" class="headerlink" title="4.提交文件"></a>4.提交文件</h3><p>执行指令添加文件-&gt;提交文件-&gt;推送文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;提交文件&quot;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-上传github之前需要先更新代码"><a href="#5-上传github之前需要先更新代码" class="headerlink" title="5.上传github之前需要先更新代码"></a>5.上传github之前需要先更新代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-<h3 id="6-版本回退"><a href="#6-版本回退" class="headerlink" title="6.版本回退"></a>6.版本回退</h3><p>显示提交记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=oneline</span><br><span class="line">34f2272c833266e37249985a9b73fa27b38824bf append GPL</span><br><span class="line">34aa48917e8fbfde2fcdaa32027074986008f2db write</span><br><span class="line">b2fde46ca5311231b2b77bc228ffe88a383455bf Update README.md</span><br><span class="line">602e3bbb7a4def190cd5cff1dcea8f787b17dbb4 first commit</span><br></pre></td></tr></table></figure></p>
-<p>如果想回退到上一个版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></p>
-<p>也可以回退到指定版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 602e</span><br></pre></td></tr></table></figure></p>
-<h3 id="7-版本回退后悔了，回到新版本"><a href="#7-版本回退后悔了，回到新版本" class="headerlink" title="7.版本回退后悔了，回到新版本"></a>7.版本回退后悔了，回到新版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br><span class="line">602e3bb HEAD@&#123;0&#125;: reset: moving to 602e</span><br><span class="line">34aa489 HEAD@&#123;1&#125;: reset: moving to HEAD^</span><br><span class="line">34f2272 HEAD@&#123;2&#125;: commit: append GPL</span><br><span class="line">34aa489 HEAD@&#123;3&#125;: commit: write</span><br><span class="line">b2fde46 HEAD@&#123;4&#125;: pull origin master: Fast-forward</span><br><span class="line">602e3bb HEAD@&#123;5&#125;: commit (initial): first commit</span><br></pre></td></tr></table></figure>
-<p>git reflog用来记录你的每一次命令<br>如果想回到commit: append GPL只需要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 34f2272</span><br></pre></td></tr></table></figure></p>
-<h3 id="8-分支"><a href="#8-分支" class="headerlink" title="8.分支"></a>8.分支</h3><p> Git 来新建一个 static-pages 分支。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git checkout -b static-pages</span><br></pre></td></tr></table></figure></p>
-<p>1.git checkout master 代表将当前分支切换到 master 分支上，master 分支是我们初始化 Git 时默认创建的主分支，其它分支都是基于主分支衍生出来的。<br>2.第二条命令 git checkout -b static-pages 将会为你创建一个名为 static-pages 的新分支。-b 选项表示创建指定名称的新分支。</p>
-<p>当完成分支任务时，将 Git 切换到 master 分支，并合并 static-pages 分支上的修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge static-pages</span><br></pre></td></tr></table></figure></p>
-<p>也可以删除不用的分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d static-pages</span><br></pre></td></tr></table></figure></p>
-<h3 id="git每次提交需要输入密码"><a href="#git每次提交需要输入密码" class="headerlink" title="git每次提交需要输入密码"></a>git每次提交需要输入密码</h3><p>在C:\Users\用户  目录下其中有一个.gitconfig的文件，使用记事本打开。<br>如果之前配置了名字和email的话，在这里面会看到。追加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">	helper=store</span><br></pre></td></tr></table></figure></p>
-<p>下次我们再次输入用户名之后，git就会记住用户名密码，以后就不需再输入了。<br>这时在上述那个目录底下，可发现生成另外一个文件.git-credentials，里面记录的就是用户名密码了</p>
-
+        
+          <a class="article-more-a" href="/2018/08/29/technology/Git/git基本使用/#more">more >></a>
+        
       
 
       
@@ -829,11 +814,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git使用 | 爱在西元前</title>
+  <title>git基本使用 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="git">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用">
+<meta property="og:title" content="git基本使用">
 <meta property="og:url" content="http://yoursite.com/2018/08/29/technology/Git/git基本使用/index.html">
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="git">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-29T12:36:55.295Z">
+<meta property="og:updated_time" content="2018-08-29T12:51:11.736Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git使用">
+<meta name="twitter:title" content="git基本使用">
 <meta name="twitter:description" content="git">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
@@ -165,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git使用
+      git基本使用
     </h1>
   
 
@@ -190,6 +190,7 @@
         <h2 id="使用git关联github"><a href="#使用git关联github" class="headerlink" title="使用git关联github"></a>使用git关联github</h2><h3 id="1-首先在git控制台中生成秘钥，"><a href="#1-首先在git控制台中生成秘钥，" class="headerlink" title="1.首先在git控制台中生成秘钥，"></a>1.首先在git控制台中生成秘钥，</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
 <p>把生成的公钥id_rsa.pub中内容复制到github中创建SSH keys</p>
 <h3 id="2-为git绑定用户，即设置用户名和邮箱"><a href="#2-为git绑定用户，即设置用户名和邮箱" class="headerlink" title="2.为git绑定用户，即设置用户名和邮箱"></a>2.为git绑定用户，即设置用户名和邮箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config  --global user.name   &quot;用户名&quot;</span><br><span class="line">git config  --global user.email  &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="3-上传本地项目到github"><a href="#3-上传本地项目到github" class="headerlink" title="3.上传本地项目到github"></a>3.上传本地项目到github</h3><p>在github上创建仓库phpStudy，然后在本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　git init           //把这个目录变成Git可以管理的仓库</span><br><span class="line">　　git add README.md //文件添加到仓库</span><br><span class="line">　　git add .         //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">　　git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">　　git remote add origin git@github.com:用户名/phpStudy.git //关联远程仓库</span><br><span class="line">　　git push -u origin master    //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure></p>
 <h3 id="4-提交文件"><a href="#4-提交文件" class="headerlink" title="4.提交文件"></a>4.提交文件</h3><p>执行指令添加文件-&gt;提交文件-&gt;推送文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;提交文件&quot;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
 <h3 id="5-上传github之前需要先更新代码"><a href="#5-上传github之前需要先更新代码" class="headerlink" title="5.上传github之前需要先更新代码"></a>5.上传github之前需要先更新代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
@@ -568,11 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
