@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>win7下MySQL 5.7 版本安装与使用 | 爱在西元前</title>
+  <title>Pillow教程(二) | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="Python">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta property="og:url" content="http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/index.html">
+<meta property="og:title" content="Pillow教程(二)">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/technology/Python/Pillow教程(二)/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="MySQL">
+<meta property="og:description" content="Python">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T10:45:45.728Z">
+<meta property="og:updated_time" content="2018-09-07T13:46:36.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta name="twitter:description" content="MySQL">
+<meta name="twitter:title" content="Pillow教程(二)">
+<meta name="twitter:description" content="Python">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/MySQL/win7下MySQL 5.7 版本安装与使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/Python/Pillow教程(二)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      win7下MySQL 5.7 版本安装与使用
+      Pillow教程(二)
     </h1>
   
 
@@ -181,54 +181,22 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/Pillow教程(二)/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="archive-article-date">
-  	<time datetime="2018-07-28T08:47:24.200Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+        <a href="/2018/09/07/technology/Python/Pillow教程(二)/" class="archive-article-date">
+  	<time datetime="2018-09-07T13:43:56.840Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-配置my-ini"><a href="#1-配置my-ini" class="headerlink" title="1. 配置my.ini :"></a>1. 配置my.ini :</h3><p>添加basedir和datadir；注意：在window下需要 <code>\\s</code> ,否则会被转义错 误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = C:\\software\MySQL\MySQL Server 5.7</span><br><span class="line">datadir = C:\\software\MySQL\MySQL Server 5.7\data</span><br></pre></td></tr></table></figure></p>
+        <h3 id="图片加上文字"><a href="#图片加上文字" class="headerlink" title="图片加上文字"></a>图片加上文字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image,ImageDraw,ImageFont</span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;tu.jpg&apos;)</span><br><span class="line">draw = ImageDraw.Draw(im)</span><br><span class="line"></span><br><span class="line">(width, height) = im.size</span><br><span class="line">myfont  = ImageFont.truetype(&apos;yuanqi.ttf&apos;,size = 120)</span><br><span class="line">fillcolor = &apos;pink&apos;</span><br><span class="line"></span><br><span class="line">#第一个参数是加入字体的坐标</span><br><span class="line">#第二个参数是文字内容</span><br><span class="line">#第三个参数是字体格式</span><br><span class="line">#第四个参数是字体颜色</span><br><span class="line">draw.text( (60,100) , u&apos;萌萌哒&apos; ,font = myfont , fill = fillcolor )</span><br><span class="line">im.save(&apos;tu_word.jpg&apos;)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装 :"></a>2.命令安装 :</h3><p>由于在 5.7版本中没有data文件夹，需要先初始化创建data,<br>然后以管理员身份打开cmd</p>
-<ul>
-<li>初始化：mysqld –initialize</li>
-<li>安装 ：mysqld  -install</li>
-<li>启动 ：net start mysql   （关闭mysql命令为：net stop mysql）</li>
-</ul>
-<p>如果安装失败，需要先删除在重新安装：</p>
-<ul>
-<li>删除 ：mysqld   -remove</li>
-</ul>
-<h3 id="3-登录"><a href="#3-登录" class="headerlink" title="3.登录"></a>3.登录</h3><ul>
-<li><p>获取密码：<br>由于5.7加强了安全性能，所以在初次登录是有初始随机密码的。<br>密码在安装时生成的data下的wangchen-PC.err中</p>
-<blockquote>
-<p> 2016-07-06T09:22:45.380751Z 1 [Note] A temporary password is generated for root@localhost: 7_h8s6,qgt4U</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7_h8s6,qgt4U    就是我的初始密码</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码：<br>修改之前要先登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;mysql -uroot -p</span><br><span class="line">回车输入密码：&gt;7_h8s6,qgt4U  完成登录</span><br><span class="line">修改：</span><br><span class="line">mysql&gt; alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;0208&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="4-查看配置"><a href="#4-查看配置" class="headerlink" title="4.查看配置"></a>4.查看配置</h3><ul>
-<li><p>查看数据库编码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;char%&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更改my.ini文件， 添加如下内容即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server = utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后重启mysql即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop  mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意：<br>在配置文件my.ini 中，[mysql]和[client] 标识的是客户端相关配置；<br>而 [mysqld] 表示 服务端相关配置。</p>
-
+<h3 id="图片加上数字"><a href="#图片加上数字" class="headerlink" title="图片加上数字"></a>图片加上数字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image,ImageDraw,ImageFont</span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;tu.jpg&apos;)</span><br><span class="line">draw = ImageDraw.Draw(im)</span><br><span class="line"></span><br><span class="line">(width, height) = im.size</span><br><span class="line">myfont  = ImageFont.truetype(&apos;yuanqi.ttf&apos;,size = 120)</span><br><span class="line"></span><br><span class="line">#在图上画一个圆,ellipse参数分别为 左上角的坐标，右下角的坐标</span><br><span class="line">#ellipse(左上X , 左上Y , 右下X , 右下Y)</span><br><span class="line">draw.ellipse((width-200, 0 ,width,200),fill=&quot;red&quot;,outline=&quot;red&quot;)   </span><br><span class="line"></span><br><span class="line">draw.text((width-120,20 ),&apos;5&apos;,font=myfont,fill=&apos;white&apos;)</span><br><span class="line">im.save(&apos;tu_number.jpg&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="将图片转化成字符画"><a href="#将图片转化成字符画" class="headerlink" title="将图片转化成字符画"></a>将图片转化成字符画</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">#要索引的字符列表</span><br><span class="line">ascii_char = list(&quot;$@B%8&amp;WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1&#123;&#125;[]?-_+~&lt;&gt;i!lI;:,\&quot;^`&apos;. &quot;)</span><br><span class="line">length = len(ascii_char)</span><br><span class="line"></span><br><span class="line"> #读取图像文件</span><br><span class="line">def readImg():</span><br><span class="line">	img = Image.open(&apos;kai.png&apos;)</span><br><span class="line">	(width,height) = img.size</span><br><span class="line">	img = img.resize( ( int(width * 0.9) ,  int(height * 0.5) ))</span><br><span class="line">	print(img.size)</span><br><span class="line">	return img</span><br><span class="line"></span><br><span class="line">def convert(img):</span><br><span class="line">	# 转为灰度图像</span><br><span class="line">	img = img.convert(&apos;L&apos;)</span><br><span class="line">	txt = &apos;&apos;</span><br><span class="line">	for y in range(img.size[1]):</span><br><span class="line">		for x in range(img.size[0]):</span><br><span class="line">			# 获取每个坐标像素点的灰度</span><br><span class="line">			gray = img.getpixel((x,y))</span><br><span class="line">			unit = 256.0 / length</span><br><span class="line">			txt += ascii_char[(int)(gray/unit)]</span><br><span class="line">		txt += &apos;\n&apos;</span><br><span class="line">	return txt</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">	txt = convert(readImg())</span><br><span class="line">	with open(&apos;kai.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">		f.write(txt)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -272,7 +240,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -339,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/07/technology/Python/Pillow教程(二)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +321,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/07/technology/Python/python文件打包成exe/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo添加评论系统
+          python文件打包成exe
         
       </div>
     </a>
   
   
-    <a href="/2018/07/28/articles/我看到了我的爱恋/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我看到了我的爱恋</div>
+    <a href="/2018/09/07/technology/Python/Pillow教程(一)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pillow教程(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   

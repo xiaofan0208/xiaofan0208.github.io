@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>win7下MySQL 5.7 版本安装与使用 | 爱在西元前</title>
+  <title>Python2编码问题 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="Python">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta property="og:url" content="http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/index.html">
+<meta property="og:title" content="Python2编码问题">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/technology/Python/Python2编码问题/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="MySQL">
+<meta property="og:description" content="Python">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T10:45:45.728Z">
+<meta property="og:updated_time" content="2018-09-07T13:39:44.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta name="twitter:description" content="MySQL">
+<meta name="twitter:title" content="Python2编码问题">
+<meta name="twitter:description" content="Python">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/MySQL/win7下MySQL 5.7 版本安装与使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/Python/Python2编码问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      win7下MySQL 5.7 版本安装与使用
+      Python2编码问题
     </h1>
   
 
@@ -181,53 +181,49 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/Python2编码问题/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="archive-article-date">
-  	<time datetime="2018-07-28T08:47:24.200Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+        <a href="/2018/09/07/technology/Python/Python2编码问题/" class="archive-article-date">
+  	<time datetime="2018-09-07T13:38:46.836Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-配置my-ini"><a href="#1-配置my-ini" class="headerlink" title="1. 配置my.ini :"></a>1. 配置my.ini :</h3><p>添加basedir和datadir；注意：在window下需要 <code>\\s</code> ,否则会被转义错 误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = C:\\software\MySQL\MySQL Server 5.7</span><br><span class="line">datadir = C:\\software\MySQL\MySQL Server 5.7\data</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装 :"></a>2.命令安装 :</h3><p>由于在 5.7版本中没有data文件夹，需要先初始化创建data,<br>然后以管理员身份打开cmd</p>
-<ul>
-<li>初始化：mysqld –initialize</li>
-<li>安装 ：mysqld  -install</li>
-<li>启动 ：net start mysql   （关闭mysql命令为：net stop mysql）</li>
-</ul>
-<p>如果安装失败，需要先删除在重新安装：</p>
-<ul>
-<li>删除 ：mysqld   -remove</li>
-</ul>
-<h3 id="3-登录"><a href="#3-登录" class="headerlink" title="3.登录"></a>3.登录</h3><ul>
-<li><p>获取密码：<br>由于5.7加强了安全性能，所以在初次登录是有初始随机密码的。<br>密码在安装时生成的data下的wangchen-PC.err中</p>
+        <p>使用Python2.x开发最令人头疼的莫过于编码问题了，最常见的错误就是 UnicodeEncodeError、UnicodeDecodeError。<br>接下来我们就来研究下相关内容</p>
+<h3 id="字节与字符"><a href="#字节与字符" class="headerlink" title="字节与字符"></a>字节与字符</h3><p>计算机存储数据，比如视频、文本等都是由字节构成的，一个字节等于8个比特位。<br>字符就是一个符号，如一个汉字、一个字母等。<br>字符方便阅读，而字节可用于计算机存储和网络传输。硬盘里的东西都是以二进制数据形式存在的，即字节。<br><a id="more"></a></p>
+<h3 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h3><p>当我们在txt文本中写上一个个字符时，它们最终是以二进制字节序列的形式保存在磁盘上的，这种从字符到字节的转换过程就叫做编码(encode),反过来则是解码(decode)。</p>
+<p>那么在Python2.x中的编码问题为何如此头疼？</p>
+<p>那是因为Python2是默认使用ASCII 字符编码的，而ASCII 编码又不能处理中文。此外在Python诞生时还没有utf-8编码。</p>
+<h3 id="str与unicode"><a href="#str与unicode" class="headerlink" title="str与unicode"></a>str与unicode</h3><p>Python字符串分为两种类型 unicode 和 str ,本质上 str 是一串二进制字节序列。<br>下面的例子将str类型的’我’ 打印出16进制的\xce\xd2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = &apos;我&apos;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&apos;\xce\xd2&apos;</span><br><span class="line">&gt;&gt;&gt; type(s)</span><br><span class="line">&lt;type &apos;str&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>而unicode类型的 ‘我’ 对应的unicode符号为 u’\u6211’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; u=u&apos;我&apos;</span><br><span class="line">&gt;&gt;&gt; u</span><br><span class="line">u&apos;\u6211&apos;</span><br><span class="line">&gt;&gt;&gt; type(u)</span><br><span class="line">&lt;type &apos;unicode&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>而unicode符号保存到文件或者传输到网络需要经过 encode 编码转化成str类型。反之，从str类型经过 decode 转化成 unicode。</p>
+<p>encode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; u = u&apos;我&apos;</span><br><span class="line">&gt;&gt;&gt; u</span><br><span class="line">u&apos;\u6211&apos;</span><br><span class="line">&gt;&gt;&gt; u.encode(&apos;utf-8&apos;)</span><br><span class="line">&apos;\xe6\x88\x91&apos;</span><br></pre></td></tr></table></figure></p>
+<p>decode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def de():</span><br><span class="line">	s = &apos;我&apos;</span><br><span class="line">	print(s)</span><br><span class="line">	b = s.decode(&apos;utf-8&apos;)</span><br><span class="line">	print(b)</span><br></pre></td></tr></table></figure></p>
+<p>小结：str本质是一串二进制数据，而 unicode 是字符（符号），编码（encode）就是把字符（符号）转换为 二进制数据的过程，因此 unicode 到 str 的转换要用 encode 方法，反过来就是用 decode 方法。</p>
+<h3 id="UnicodeEncodeError"><a href="#UnicodeEncodeError" class="headerlink" title="UnicodeEncodeError"></a>UnicodeEncodeError</h3><p>UnicodeEncodeError 发生在unicode字符串转换成str字节序列的时候，例如把unicode字符串保存到文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">def main():</span><br><span class="line">	name = u&apos;测试&apos;</span><br><span class="line">	with open(&apos;out.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">		f.write(name)</span><br></pre></td></tr></table></figure></p>
+<p>报错如下：</p>
 <blockquote>
-<p> 2016-07-06T09:22:45.380751Z 1 [Note] A temporary password is generated for root@localhost: 7_h8s6,qgt4U</p>
+<p>UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position 0-1: ordinal not in range(128)</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7_h8s6,qgt4U    就是我的初始密码</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码：<br>修改之前要先登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;mysql -uroot -p</span><br><span class="line">回车输入密码：&gt;7_h8s6,qgt4U  完成登录</span><br><span class="line">修改：</span><br><span class="line">mysql&gt; alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;0208&apos;;</span><br></pre></td></tr></table></figure>
-</li>
+<p>为什么出现这个错误？<br>因为调用 write 方法时，Python 会先判断字符串是什么类型，如果是 str，就直接写入文件，<br>如果字符串是 unicode 类型，那么它会先调用 encode 方法把 unicode 字符串转换成二进制形式的 str 类型，才保存到文件，而 encode 方法会使用 python 默认的 ascii 码来编码。</p>
+<p>相当于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; u&quot;测试&quot;.encode(&quot;ascii&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>但是，我们知道 ASCII 字符集中只包含了128个拉丁字母，不包括中文字符，因此 出现了 ‘ascii’ codec can’t encode characters 的错误。要正确地使用 encode ，就必须指定一个包含了中文字符的字符集，比如：UTF-8、GBK。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def main():</span><br><span class="line">	name = u&apos;测试&apos;</span><br><span class="line">	name = name.encode(&apos;utf-8&apos;)</span><br><span class="line">	with open(&apos;out.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">		f.write(name)</span><br></pre></td></tr></table></figure></p>
+<h3 id="UnicodeDecodeError"><a href="#UnicodeDecodeError" class="headerlink" title="UnicodeDecodeError"></a>UnicodeDecodeError</h3><p>UnicodeDecodeError 发生在 str 类型的字节序列解码成 unicode 类型的字符串时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = u&apos;我&apos;</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">u&apos;\u6211&apos;</span><br><span class="line">&gt;&gt;&gt; b = a.encode(&apos;utf-8&apos;)</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">&apos;\xe6\x88\x91&apos;</span><br><span class="line">&gt;&gt;&gt; b.decode(&apos;gbk&apos;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">UnicodeDecodeError: &apos;gbk&apos; codec can&apos;t decode byte 0x91 in position 2: incomplete multibyte sequence</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>把一个经过 UTF-8 编码后生成的字节序列 ‘\xe6\x88\x91’再用 GBK 解码转换成 unicode 字符串时，出现 UnicodeDecodeError。</li>
+<li>因为 （对于中文字符）GBK 编码只占用两个字节，而 UTF-8 占用3个字节，用 GBK 转换时，还多出一个字节，因此它没法解析。避免 UnicodeDecodeError 的关键是保持 编码和解码时用的编码类型一致。</li>
 </ul>
-<h3 id="4-查看配置"><a href="#4-查看配置" class="headerlink" title="4.查看配置"></a>4.查看配置</h3><ul>
-<li><p>查看数据库编码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;char%&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更改my.ini文件， 添加如下内容即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server = utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后重启mysql即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop  mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意：<br>在配置文件my.ini 中，[mysql]和[client] 标识的是客户端相关配置；<br>而 [mysqld] 表示 服务端相关配置。</p>
+</blockquote>
+<p>字符 “我”，保存到文件中有可能占3个字节，有可能占2个字节，具体处决于 encode 的时候指定的编码格式是什么。</p>
+<p>UnicodeDecodeError的又一个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = u&apos;Python&apos;</span><br><span class="line">&gt;&gt;&gt; y = &apos;大神&apos;</span><br><span class="line">&gt;&gt;&gt; x + y</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">UnicodeDecodeError: &apos;ascii&apos; codec can&apos;t decode byte 0xb4 in position 0: ordinal not in range(128)</span><br></pre></td></tr></table></figure></p>
+<p>str 与 unicode 字符串 执行 + 操作时，Python 会把 str 类型的字节序列隐式地转换成（解码）成 和 x 一样的 unicode 类型，但Python是使用默认的 ascii 编码来转换的，而 ASCII字符集中不包含有中文，所以报错了。<br>相当于执行了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y.decode(&apos;ascii&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>正确地方式应该是找到一种包含有中文字符的字符编码，比如 UTF-8或者 GBK 显示地把 y 进行解码转换成 unicode 类型.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def decodeTest():</span><br><span class="line">	x = u&apos;Python&apos;</span><br><span class="line">	y = &apos;大神&apos;</span><br><span class="line">	y = y.decode(&apos;utf-8&apos;)</span><br><span class="line">	print(x+y)</span><br></pre></td></tr></table></figure></p>
+<p>详情参见，原文出处：<a href="http://python.jobbole.com/88264/" target="_blank" rel="noopener">http://python.jobbole.com/88264/</a></p>
 
       
 
@@ -272,7 +268,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -339,7 +335,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/07/technology/Python/Python2编码问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +349,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/07/technology/Python/Python3编码问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo添加评论系统
+          Python3编码问题
         
       </div>
     </a>
   
   
-    <a href="/2018/07/28/articles/我看到了我的爱恋/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我看到了我的爱恋</div>
+    <a href="/2018/09/01/technology/Laravel/【Laravel】yarn install安装问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Laravel在执行yarn install问题</div>
       <i class="icon-circle-right"></i>
     </a>
   

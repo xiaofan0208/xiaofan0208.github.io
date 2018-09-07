@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>win7下MySQL 5.7 版本安装与使用 | 爱在西元前</title>
+  <title>Pillow教程(一) | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="Python">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta property="og:url" content="http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/index.html">
+<meta property="og:title" content="Pillow教程(一)">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/technology/Python/Pillow教程(一)/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="MySQL">
+<meta property="og:description" content="Python">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-28T10:45:45.728Z">
+<meta property="og:updated_time" content="2018-09-07T13:46:19.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="win7下MySQL 5.7 版本安装与使用">
-<meta name="twitter:description" content="MySQL">
+<meta name="twitter:title" content="Pillow教程(一)">
+<meta name="twitter:description" content="Python">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/MySQL/win7下MySQL 5.7 版本安装与使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/Python/Pillow教程(一)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      win7下MySQL 5.7 版本安装与使用
+      Pillow教程(一)
     </h1>
   
 
@@ -181,53 +181,46 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/Pillow教程(一)/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" class="archive-article-date">
-  	<time datetime="2018-07-28T08:47:24.200Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+        <a href="/2018/09/07/technology/Python/Pillow教程(一)/" class="archive-article-date">
+  	<time datetime="2018-09-07T13:43:56.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-配置my-ini"><a href="#1-配置my-ini" class="headerlink" title="1. 配置my.ini :"></a>1. 配置my.ini :</h3><p>添加basedir和datadir；注意：在window下需要 <code>\\s</code> ,否则会被转义错 误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = C:\\software\MySQL\MySQL Server 5.7</span><br><span class="line">datadir = C:\\software\MySQL\MySQL Server 5.7\data</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装 :"></a>2.命令安装 :</h3><p>由于在 5.7版本中没有data文件夹，需要先初始化创建data,<br>然后以管理员身份打开cmd</p>
-<ul>
-<li>初始化：mysqld –initialize</li>
-<li>安装 ：mysqld  -install</li>
-<li>启动 ：net start mysql   （关闭mysql命令为：net stop mysql）</li>
-</ul>
-<p>如果安装失败，需要先删除在重新安装：</p>
-<ul>
-<li>删除 ：mysqld   -remove</li>
-</ul>
-<h3 id="3-登录"><a href="#3-登录" class="headerlink" title="3.登录"></a>3.登录</h3><ul>
-<li><p>获取密码：<br>由于5.7加强了安全性能，所以在初次登录是有初始随机密码的。<br>密码在安装时生成的data下的wangchen-PC.err中</p>
+        <p>传统的PIL库不支持python3，所以使用从PIL派生出来的Pillow库。</p>
+<h3 id="Image类"><a href="#Image类" class="headerlink" title="Image类"></a>Image类</h3><p>Pillow中最重要的类就是Image，该类存在于同名的模块中。可以通过以下几种方式实例化：从文件中读取图片，处理其他图片得到，或者直接创建一个图片。<br><a id="more"></a><br>使用Image模块中的open函数打开一张图片：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;1.gif&apos;)</span><br><span class="line">print(im)</span><br><span class="line">print(im.format,im.size,im.mode)</span><br></pre></td></tr></table></figure></p>
+<p>如果打开成功，返回一个Image对象，可以通过对象属性检查文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;PIL.GifImagePlugin.GifImageFile image mode=P size=170x288 at 0x567748&gt;</span><br><span class="line">GIF (170, 288) P</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p> 2016-07-06T09:22:45.380751Z 1 [Note] A temporary password is generated for root@localhost: 7_h8s6,qgt4U</p>
+<ul>
+<li>format属性定义了图像的格式，如果图像不是从文件打开的，那么该属性值为None;</li>
+<li>size属性是一个tuple，表示图像的宽和高(单位为像素);</li>
+<li>mode属性为表示图像的模式.<br>模式属性如下：</li>
+</ul>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7_h8s6,qgt4U    就是我的初始密码</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码：<br>修改之前要先登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;mysql -uroot -p</span><br><span class="line">回车输入密码：&gt;7_h8s6,qgt4U  完成登录</span><br><span class="line">修改：</span><br><span class="line">mysql&gt; alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;0208&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="4-查看配置"><a href="#4-查看配置" class="headerlink" title="4.查看配置"></a>4.查看配置</h3><ul>
-<li><p>查看数据库编码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;char%&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更改my.ini文件， 添加如下内容即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server = utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后重启mysql即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop  mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意：<br>在配置文件my.ini 中，[mysql]和[client] 标识的是客户端相关配置；<br>而 [mysqld] 表示 服务端相关配置。</p>
+<table><br>    <tr><br>        <td>1</td><td>1位像素，黑和白，存成8位的像素</td><br>    </tr><br>    <tr><br>        <td>L</td><td> 8位像素，黑白</td><br>    </tr><br>    <tr><br>        <td>P</td><td>8位像素，使用调色板映射到任何其他模式</td><br>    </tr><br>    <tr><br>        <td>RGB</td><td>3×8位像素，真彩</td><br>    </tr><br>    <tr><br>        <td>RGBA</td><td>4×8位像素，真彩+透明通道</td><br>    </tr><br>    <tr><br>        <td>CMYK</td><td>4×8位像素，颜色隔离</td><br>    </tr><br>    <tr><br>        <td>YCbCr</td><td>3×8位像素，彩色视频格式</td><br>    </tr><br>    <tr><br>        <td>I</td><td>32位整型像素</td><br>    </tr><br>    <tr><br>        <td>F</td><td>32位浮点型像素</td><br>    </tr><br></table> 
+
+<p>当有一个Image对象时，可以用Image类的各个方法进行处理和操作图像，例如显示图片。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">im.show()</span><br></pre></td></tr></table></figure></p>
+<p>PS:标准版本的show()方法不是很有效率，因为它先将图像保存为一个临时文件，然后使用查看器进行显示。</p>
+<h3 id="读写图片"><a href="#读写图片" class="headerlink" title="读写图片"></a>读写图片</h3><p>Pillow库支持相当多的图片格式。直接使用Image模块中的open()函数读取图片，而不必先处理图片的格式，Pillow库自动根据文件决定格式。</p>
+<p>Image模块中的save()函数可以保存图片，除非你指定文件格式，那么文件名中的扩展名用来指定文件格式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">im = Image.open(&apos;1.gif&apos;)</span><br><span class="line">im.save(&apos;f.BMP&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>通常，save用以保存一个临时的image对象到硬盘。而转换工作由一个功能更为强大的convert()方法来完成。</p>
+<h3 id="拷贝，粘贴，合并图片"><a href="#拷贝，粘贴，合并图片" class="headerlink" title="拷贝，粘贴，合并图片"></a>拷贝，粘贴，合并图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;tu.jpg&apos;)</span><br><span class="line">#设置要拷贝的区域  </span><br><span class="line">box = (100, 100, 500, 500)</span><br><span class="line"></span><br><span class="line"># 将im表示的图片对象拷贝到region中，大小为(400*400)像素。</span><br><span class="line"># 这个region可以用来后续的操作(region其实就是一个Image对象)，</span><br><span class="line"># box变量是一个四元组(左，上，右，下)。  </span><br><span class="line">region  = im.crop(box)</span><br><span class="line"></span><br><span class="line"># 从字面上就可以看出，先把region中的Image反转180度，然后再放回到region中。  </span><br><span class="line">region = region.transpose(Image.ROTATE_90)</span><br><span class="line">#粘贴box大小的region到原先的图片对象中。  </span><br><span class="line">im.paste(region, box)</span><br><span class="line">im.save(&apos;1.jpg&apos;)</span><br></pre></td></tr></table></figure>
+<p>区域由4-tuple决定，该tuple中信息为(left, upper, right, lower)，Pillow左边系统的原点（0，0）为图片的左上角。坐标中的数字单位为像素点。<br>上面示例粘贴后的图片是临时性，需要save保存成新图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box = im.copy() #直接复制图像</span><br></pre></td></tr></table></figure>
+<h4 id="分离和合并通道"><a href="#分离和合并通道" class="headerlink" title="分离和合并通道"></a>分离和合并通道</h4><p>每一个RGB都是由三个通道的灰度图叠加的,所以pil提供了将这三个通道分离的方法.<br>对于单通道图片，split()返回图像本身。为了处理单通道图片，必须先将图片转成RGB。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r,g,b = im.split()#分割成三个通道  </span><br><span class="line">im = Image.merge(&quot;RGB&quot;, (b, g, r))  #将b,r两个通道进行翻转。</span><br></pre></td></tr></table></figure></p>
+<h3 id="几何转变"><a href="#几何转变" class="headerlink" title="几何转变"></a>几何转变</h3><p>Image类有resize()、rotate()和transpose()、transform()方法进行几何变换,用以重定义图片大小，对图片进行旋转等操作。<br>简单几何变换:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">out = im.resize( ( 128,128))</span><br><span class="line">out = im.rotate(45)</span><br></pre></td></tr></table></figure></p>
+<p>置换图像:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 左右翻转</span><br><span class="line">out = im.transpose(Image.FLIP_LEFT_RIGHT)</span><br><span class="line"># 上下反向</span><br><span class="line">out = im.transpose(Image.FLIP_TOP_BOTTOM)</span><br><span class="line">out = im.transpose(Image.ROTATE_90)</span><br></pre></td></tr></table></figure></p>
+<p>transpose()和象的rotate()没有性能差别。</p>
+<h3 id="模式转换"><a href="#模式转换" class="headerlink" title="模式转换"></a>模式转换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 黑白</span><br><span class="line">am = im.convert(&apos;L&apos;)</span><br><span class="line">am.show()</span><br></pre></td></tr></table></figure>
+<h3 id="图像增强"><a href="#图像增强" class="headerlink" title="图像增强"></a>图像增强</h3><p>1.滤镜<br>ImageFilter模块提供了很多预定义的图片加强滤镜。<br>比如一个常用的滤镜,细节(detail滤镜)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import ImageFilter  </span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;tu.jpg&apos;)</span><br><span class="line">out = im.filter(ImageFilter.DETAIL)</span><br></pre></td></tr></table></figure></p>
+<p>2.直接操作像素点<br>可以对每个像素点进行操作，而且，每一个通道都可以独立的进行操作。比如，将每个像素点的亮度(不知道有没有更专业的词)增大20%<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#注意这里用到一个匿名函数(那个可以把i的1.2倍返回的函数)  </span><br><span class="line">out = im.point(lambda i : i *  1.2)</span><br></pre></td></tr></table></figure></p>
+<p>3.读写图片的更多方式<br>通常，我们使用open方法进行图片的打开操作。但是这不是唯一的方式。完全可以跟python的IO整合起来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fp = open(&quot;tu.jpg&quot;, &quot;rb&quot;)  </span><br><span class="line">im = Image.open(fp)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -272,7 +265,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
@@ -339,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/28/technology/MySQL/win7下MySQL 5.7 版本安装与使用/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/07/technology/Python/Pillow教程(一)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +346,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/07/technology/Python/Pillow教程(二)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo添加评论系统
+          Pillow教程(二)
         
       </div>
     </a>
   
   
-    <a href="/2018/07/28/articles/我看到了我的爱恋/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我看到了我的爱恋</div>
+    <a href="/2018/09/07/technology/Python/分割带有plist的图片(TexturePacker)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分割带有plist的图片(TexturePacker)</div>
       <i class="icon-circle-right"></i>
     </a>
   
