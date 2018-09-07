@@ -191,9 +191,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>pyinstaller是一个非常简单的打包python的py文件的库</p>
-<h3 id="1-安装pyinstaller"><a href="#1-安装pyinstaller" class="headerlink" title="1.安装pyinstaller"></a>1.安装pyinstaller</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></table></figure>
-<h3 id="2-输入命令"><a href="#2-输入命令" class="headerlink" title="2.输入命令"></a>2.输入命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F demo.py</span><br></pre></td></tr></table></figure>
-<h3 id="3-自定义图标"><a href="#3-自定义图标" class="headerlink" title="3.自定义图标"></a>3.自定义图标</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F -i xin.ico  splitimage.py</span><br></pre></td></tr></table></figure>
+<h3 id="1-安装pyinstaller"><a href="#1-安装pyinstaller" class="headerlink" title="1.安装pyinstaller"></a>1.安装pyinstaller</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> pyinstaller</span><br></pre></td></tr></table></figure>
+<h3 id="2-输入命令"><a href="#2-输入命令" class="headerlink" title="2.输入命令"></a>2.输入命令</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">pyinstaller</span> <span class="selector-tag">-F</span> <span class="selector-tag">demo</span><span class="selector-class">.py</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-自定义图标"><a href="#3-自定义图标" class="headerlink" title="3.自定义图标"></a>3.自定义图标</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F -<span class="selector-tag">i</span> xin<span class="selector-class">.ico</span>  splitimage.py</span><br></pre></td></tr></table></figure>
 
       
 
@@ -288,7 +288,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="图片加上文字"><a href="#图片加上文字" class="headerlink" title="图片加上文字"></a>图片加上文字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image,ImageDraw,ImageFont</span><br><span class="line"></span><br><span class="line">im = Image.open(&apos;tu.jpg&apos;)</span><br><span class="line">draw = ImageDraw.Draw(im)</span><br><span class="line"></span><br><span class="line">(width, height) = im.size</span><br><span class="line">myfont  = ImageFont.truetype(&apos;yuanqi.ttf&apos;,size = 120)</span><br><span class="line">fillcolor = &apos;pink&apos;</span><br><span class="line"></span><br><span class="line">#第一个参数是加入字体的坐标</span><br><span class="line">#第二个参数是文字内容</span><br><span class="line">#第三个参数是字体格式</span><br><span class="line">#第四个参数是字体颜色</span><br><span class="line">draw.text( (60,100) , u&apos;萌萌哒&apos; ,font = myfont , fill = fillcolor )</span><br><span class="line">im.save(&apos;tu_word.jpg&apos;)</span><br></pre></td></tr></table></figure>
+        <h3 id="图片加上文字"><a href="#图片加上文字" class="headerlink" title="图片加上文字"></a>图片加上文字</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image,ImageDraw,ImageFont</span><br><span class="line"></span><br><span class="line">im = Image.open(<span class="string">'tu.jpg'</span>)</span><br><span class="line">draw = ImageDraw.Draw(im)</span><br><span class="line"></span><br><span class="line">(width, height) = im.size</span><br><span class="line">myfont  = ImageFont.truetype(<span class="string">'yuanqi.ttf'</span>,size = <span class="number">120</span>)</span><br><span class="line">fillcolor = <span class="string">'pink'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#第一个参数是加入字体的坐标</span></span><br><span class="line"><span class="comment">#第二个参数是文字内容</span></span><br><span class="line"><span class="comment">#第三个参数是字体格式</span></span><br><span class="line"><span class="comment">#第四个参数是字体颜色</span></span><br><span class="line">draw.text( (<span class="number">60</span>,<span class="number">100</span>) , <span class="string">u'萌萌哒'</span> ,font = myfont , fill = fillcolor )</span><br><span class="line">im.save(<span class="string">'tu_word.jpg'</span>)</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/09/07/technology/Python/Pillow教程(二)/#more">more >></a>
         
@@ -587,7 +587,7 @@
 <li>把字符串的牵强地分为 unicode 和 str 两种类型，误导开发者</li>
 </ul>
 </blockquote>
-<p>而Python3则把系统默认编码设置为了 UTF-8<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import sys</span><br><span class="line">&gt;&gt;&gt; sys.getdefaultencoding()</span><br><span class="line">&apos;utf-8&apos;</span><br></pre></td></tr></table></figure></p>
+<p>而Python3则把系统默认编码设置为了 UTF-8<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; import sys</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; sys.getdefaultencoding()</span><br><span class="line"><span class="string">'utf-8'</span></span><br></pre></td></tr></table></figure></p>
 <p>之后，文本字符和二进制数据分别用str和bytes表示。str能表示Unicode 字符集中所有字符，而二进制字节数据则用全新的数据类型bytes表示。<br>
         
           <a class="article-more-a" href="/2018/09/07/technology/Python/Python3编码问题/#more">more >></a>
@@ -784,8 +784,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Laravel 在执行 yarn install 时遇到错误</p>
-<p>重新执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.$ rm -rf node_modules</span><br><span class="line"></span><br><span class="line">2.$ yarn config set registry http://registry.cnpmjs.org</span><br><span class="line"></span><br><span class="line">3.$ yarn install --no-bin-links</span><br></pre></td></tr></table></figure></p>
-<p>接下来打开 pakage.json 修改【去掉四处 cross-env 】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4. 执行 $ npm run watch-poll 或者 npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>重新执行以下命令：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="symbol">$</span> rm -rf node_modules</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span><span class="symbol">$</span> yarn config <span class="keyword">set</span> registry <span class="comment">http:</span>//<span class="comment">registry.cnpmjs.org</span></span><br><span class="line"></span><br><span class="line">3.$ yarn <span class="comment">install --no-bin-links</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来打开 pakage.json 修改【去掉四处 cross-env 】<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4. 执行 $ npm <span class="builtin-name">run</span> watch-poll 或者 npm <span class="builtin-name">run</span> dev</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -881,7 +881,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我们在使用github提交时，有可能会出现，提交的邮箱等不是自己的，设置错误。<br>这时需要修改历史提交记录</p>
-<h3 id="新建仓库信息"><a href="#新建仓库信息" class="headerlink" title="新建仓库信息"></a>新建仓库信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone --bare https://github.com/用户名/库名.git</span><br><span class="line">cd repo.git</span><br></pre></td></tr></table></figure>
+<h3 id="新建仓库信息"><a href="#新建仓库信息" class="headerlink" title="新建仓库信息"></a>新建仓库信息</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="params">--bare</span> https:<span class="string">//github.com/</span>用户名/库名<span class="string">.git</span></span><br><span class="line"><span class="keyword">cd</span> repo.git</span><br></pre></td></tr></table></figure>
 <p>这里的repo.git是已经clone下来的<br>
         
           <a class="article-more-a" href="/2018/08/29/technology/Git/【github】修改历史提交记录/#more">more >></a>
@@ -979,9 +979,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用git关联github"><a href="#使用git关联github" class="headerlink" title="使用git关联github"></a>使用git关联github</h2><h3 id="1-首先在git控制台中生成秘钥，"><a href="#1-首先在git控制台中生成秘钥，" class="headerlink" title="1.首先在git控制台中生成秘钥，"></a>1.首先在git控制台中生成秘钥，</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
+        <h2 id="使用git关联github"><a href="#使用git关联github" class="headerlink" title="使用git关联github"></a>使用git关联github</h2><h3 id="1-首先在git控制台中生成秘钥，"><a href="#1-首先在git控制台中生成秘钥，" class="headerlink" title="1.首先在git控制台中生成秘钥，"></a>1.首先在git控制台中生成秘钥，</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"个人邮箱"</span></span><br></pre></td></tr></table></figure>
 <p>把生成的公钥id_rsa.pub中内容复制到github中创建SSH keys</p>
-<h3 id="2-为git绑定用户，即设置用户名和邮箱"><a href="#2-为git绑定用户，即设置用户名和邮箱" class="headerlink" title="2.为git绑定用户，即设置用户名和邮箱"></a>2.为git绑定用户，即设置用户名和邮箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config  --global user.name   &quot;用户名&quot;</span><br><span class="line">git config  --global user.email  &quot;个人邮箱&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="2-为git绑定用户，即设置用户名和邮箱"><a href="#2-为git绑定用户，即设置用户名和邮箱" class="headerlink" title="2.为git绑定用户，即设置用户名和邮箱"></a>2.为git绑定用户，即设置用户名和邮箱</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span> --global user.name   <span class="string">"用户名"</span></span><br><span class="line">git<span class="built_in"> config </span> --global user.email  <span class="string">"个人邮箱"</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/08/29/technology/Git/git基本使用/#more">more >></a>
         
@@ -1316,14 +1316,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -1333,6 +1325,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>

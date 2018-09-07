@@ -193,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-配置my-ini"><a href="#1-配置my-ini" class="headerlink" title="1. 配置my.ini :"></a>1. 配置my.ini :</h3><p>添加basedir和datadir；注意：在window下需要 <code>\\s</code> ,否则会被转义错 误。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = C:\\software\MySQL\MySQL Server 5.7</span><br><span class="line">datadir = C:\\software\MySQL\MySQL Server 5.7\data</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-配置my-ini"><a href="#1-配置my-ini" class="headerlink" title="1. 配置my.ini :"></a>1. 配置my.ini :</h3><p>添加basedir和datadir；注意：在window下需要 <code>\\s</code> ,否则会被转义错 误。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basedir = C:\\software\MySQL\MySQL<span class="built_in"> Server </span>5.7</span><br><span class="line">datadir = C:\\software\MySQL\MySQL<span class="built_in"> Server </span>5.7\data</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h3 id="2-命令安装"><a href="#2-命令安装" class="headerlink" title="2.命令安装 :"></a>2.命令安装 :</h3><p>由于在 5.7版本中没有data文件夹，需要先初始化创建data,<br>然后以管理员身份打开cmd</p>
 <ul>
@@ -210,21 +210,21 @@
 <blockquote>
 <p> 2016-07-06T09:22:45.380751Z 1 [Note] A temporary password is generated for root@localhost: 7_h8s6,qgt4U</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7_h8s6,qgt4U    就是我的初始密码</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span>_h8s6,qgt4U    就是我的初始密码</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改密码：<br>修改之前要先登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;mysql -uroot -p</span><br><span class="line">回车输入密码：&gt;7_h8s6,qgt4U  完成登录</span><br><span class="line">修改：</span><br><span class="line">mysql&gt; alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;0208&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mysql -uroot -p</span></span><br><span class="line">回车输入密码：&gt;7_h8s6,qgt4U  完成登录</span><br><span class="line">修改：</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> alter user <span class="string">'root'</span>@<span class="string">'localhost'</span> identified by <span class="string">'0208'</span>;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="4-查看配置"><a href="#4-查看配置" class="headerlink" title="4.查看配置"></a>4.查看配置</h3><ul>
 <li><p>查看数据库编码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;char%&apos;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show <span class="keyword">variables</span> like <span class="comment">'char%'</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更改my.ini文件， 添加如下内容即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server = utf8</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">character-set-server</span> = utf8</span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后重启mysql即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop  mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> stop  mysql</span><br><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> mysql</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>注意：<br>在配置文件my.ini 中，[mysql]和[client] 标识的是客户端相关配置；<br>而 [mysqld] 表示 服务端相关配置。</p>
@@ -592,14 +592,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -609,6 +601,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
