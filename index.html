@@ -161,6 +161,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-technology/Laravel/【扩展】Carbon 时间显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/">【扩展】Carbon 时间显示</a>
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/" class="archive-article-date">
+  	<time datetime="2018-09-08T12:55:10.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>Carbon 是 PHP 知名的 DateTime 操作扩展，Laravel 将其默认集成到了框架中</p>
+<p>其中比较常用的方法是 diffForHumans ，默认是英文的，如需中文显示，要进行本地化啊设置。<br>在AppServiceProvider中调用Carbon 的 setLocale 方法即可<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    \Carbon\Carbon::setLocale(<span class="string">'zh'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-technology/Python/python文件打包成exe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -761,7 +859,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/01/technology/Laravel/【Laravel】yarn install安装问题/">Laravel在执行yarn install问题</a>
+      <a class="article-title" href="/2018/09/01/technology/Laravel/【Laravel】yarn install安装问题/">【Laravel】yarn install安装问题</a>
     </h1>
   
 
@@ -1049,104 +1147,6 @@
 
 
   
-    <article id="post-technology/Notes/Hexo添加评论系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/28/technology/Notes/Hexo添加评论系统/">Hexo添加评论系统</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/07/28/technology/Notes/Hexo添加评论系统/" class="pageViews">0</span>次
-  </a>
-
-        
-        <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" class="archive-article-date">
-  	<time datetime="2018-07-28T10:23:55.779Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Github上搭建了Hexo博客系统，主题采用yilia，这里给博客添加valine评论系统。</p>
-<p>1.首先注册<a href="https://leancloud.cn" target="_blank" rel="noopener">https://leancloud.cn</a> ，创建应用，然后在“设置”中的“应用Key”获取App ID以及App Key.<br>
-        
-          <a class="article-more-a" href="/2018/07/28/technology/Notes/Hexo添加评论系统/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/28/technology/Notes/Hexo添加评论系统/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1316,10 +1316,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -1328,11 +1324,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
