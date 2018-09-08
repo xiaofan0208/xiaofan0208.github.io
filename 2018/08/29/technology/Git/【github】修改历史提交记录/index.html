@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>github修改历史提交记录 | 爱在西元前</title>
+  <title>【github】修改历史提交记录 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="git,github">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github修改历史提交记录">
+<meta property="og:title" content="【github】修改历史提交记录">
 <meta property="og:url" content="http://yoursite.com/2018/08/29/technology/Git/【github】修改历史提交记录/index.html">
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="git,github">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-07T15:01:39.390Z">
+<meta property="og:updated_time" content="2018-09-08T13:00:34.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github修改历史提交记录">
+<meta name="twitter:title" content="【github】修改历史提交记录">
 <meta name="twitter:description" content="git,github">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
@@ -171,7 +171,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      github修改历史提交记录
+      【github】修改历史提交记录
     </h1>
   
 
@@ -195,7 +195,8 @@
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>我们在使用github提交时，有可能会出现，提交的邮箱等不是自己的，设置错误。<br>这时需要修改历史提交记录</p>
 <h3 id="新建仓库信息"><a href="#新建仓库信息" class="headerlink" title="新建仓库信息"></a>新建仓库信息</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="params">--bare</span> https:<span class="string">//github.com/</span>用户名/库名<span class="string">.git</span></span><br><span class="line"><span class="keyword">cd</span> repo.git</span><br></pre></td></tr></table></figure>
-<p>这里的repo.git是已经clone下来的<br><a id="more"></a></p>
+<a id="more"></a>
+<p>这里的repo.git是已经clone下来的</p>
 <h3 id="使用脚本"><a href="#使用脚本" class="headerlink" title="使用脚本"></a>使用脚本</h3><p>将下面脚本中的中文替换成自己的信息，然后把脚本复制到bash中，回车<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">git filter-branch --env-filter '</span><br><span class="line"></span><br><span class="line">OLD_EMAIL=<span class="string">"旧的邮箱</span></span><br><span class="line"><span class="string">CORRECT_NAME="</span>正确的名字<span class="string">"</span></span><br><span class="line"><span class="string">CORRECT_EMAIL="</span>正确的邮箱<span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">if [ "</span><span class="built_in">$GIT</span>_COMMITTER_EMAIL<span class="string">" = "</span><span class="built_in">$OLD</span>_EMAIL<span class="string">" ]</span></span><br><span class="line"><span class="string">then</span></span><br><span class="line"><span class="string">    export GIT_COMMITTER_NAME="</span><span class="built_in">$CORRECT</span>_NAME<span class="string">"</span></span><br><span class="line"><span class="string">    export GIT_COMMITTER_EMAIL="</span><span class="built_in">$CORRECT</span>_EMAIL<span class="string">"</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">if [ "</span><span class="built_in">$GIT</span>_AUTHOR_EMAIL<span class="string">" = "</span><span class="built_in">$OLD</span>_EMAIL<span class="string">" ]</span></span><br><span class="line"><span class="string">then</span></span><br><span class="line"><span class="string">    export GIT_AUTHOR_NAME="</span><span class="built_in">$CORRECT</span>_NAME<span class="string">"</span></span><br><span class="line"><span class="string">    export GIT_AUTHOR_EMAIL="</span><span class="built_in">$CORRECT</span>_EMAIL<span class="string">"</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"><span class="string">' --tag-name-filter cat -- --branches --tags</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="提交记录"><a href="#提交记录" class="headerlink" title="提交记录"></a>提交记录</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push <span class="params">--force</span> <span class="params">--tags</span> origin 'refs/heads/*'</span><br><span class="line"><span class="keyword">cd</span> <span class="string">..</span></span><br><span class="line">rm -rf repo.git</span><br></pre></td></tr></table></figure>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果提交版本时，出现以下问题：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error</span>：failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> ...</span><br></pre></td></tr></table></figure></p>
@@ -573,7 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +582,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
