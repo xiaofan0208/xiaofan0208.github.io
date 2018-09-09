@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git基本使用 | 爱在西元前</title>
+  <title>hieu-le active判断导航元素的active状态 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git">
-<meta name="keywords" content="Git">
+  <meta name="description" content="Laravel,php">
+<meta name="keywords" content="Laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git基本使用">
-<meta property="og:url" content="http://yoursite.com/2018/08/29/technology/Git/git基本使用/index.html">
+<meta property="og:title" content="hieu-le active判断导航元素的active状态">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="git">
+<meta property="og:description" content="Laravel,php">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T13:00:59.087Z">
+<meta property="og:updated_time" content="2018-09-09T03:02:39.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git基本使用">
-<meta name="twitter:description" content="git">
+<meta name="twitter:title" content="hieu-le active判断导航元素的active状态">
+<meta name="twitter:description" content="Laravel,php">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/Git/git基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/Laravel/【扩展】hieu-le active判断导航元素的active状态" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git基本使用
+      hieu-le active判断导航元素的active状态
     </h1>
   
 
@@ -181,35 +181,24 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/08/29/technology/Git/git基本使用/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/08/29/technology/Git/git基本使用/" class="archive-article-date">
-  	<time datetime="2018-08-29T12:36:41.869Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+        <a href="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" class="archive-article-date">
+  	<time datetime="2018-09-09T02:58:14.207Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用git关联github"><a href="#使用git关联github" class="headerlink" title="使用git关联github"></a>使用git关联github</h2><h3 id="1-首先在git控制台中生成秘钥，"><a href="#1-首先在git控制台中生成秘钥，" class="headerlink" title="1.首先在git控制台中生成秘钥，"></a>1.首先在git控制台中生成秘钥，</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"个人邮箱"</span></span><br></pre></td></tr></table></figure>
-<p>把生成的公钥id_rsa.pub中内容复制到github中创建SSH keys<br><a id="more"></a></p>
-<h3 id="2-为git绑定用户，即设置用户名和邮箱"><a href="#2-为git绑定用户，即设置用户名和邮箱" class="headerlink" title="2.为git绑定用户，即设置用户名和邮箱"></a>2.为git绑定用户，即设置用户名和邮箱</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span> --global user.name   <span class="string">"用户名"</span></span><br><span class="line">git<span class="built_in"> config </span> --global user.email  <span class="string">"个人邮箱"</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-上传本地项目到github"><a href="#3-上传本地项目到github" class="headerlink" title="3.上传本地项目到github"></a>3.上传本地项目到github</h3><p>在github上创建仓库phpStudy，然后在本地<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　git init           <span class="comment">//把这个目录变成Git可以管理的仓库</span></span><br><span class="line">　　git add README<span class="selector-class">.md</span> <span class="comment">//文件添加到仓库</span></span><br><span class="line">　　git add .         <span class="comment">//不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span></span><br><span class="line">　　git commit -m <span class="string">"first commit"</span> <span class="comment">//把文件提交到仓库</span></span><br><span class="line">　　git remote add origin git@github<span class="selector-class">.com</span>:用户名/phpStudy<span class="selector-class">.git</span> <span class="comment">//关联远程仓库</span></span><br><span class="line">　　git push -u origin master    <span class="comment">//把本地库的所有内容推送到远程库上</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="4-提交文件"><a href="#4-提交文件" class="headerlink" title="4.提交文件"></a>4.提交文件</h3><p>执行指令添加文件-&gt;提交文件-&gt;推送文件<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br><span class="line"><span class="bash">git commit -m <span class="string">"提交文件"</span></span></span><br><span class="line"><span class="bash">git push -u origin master</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="5-上传github之前需要先更新代码"><a href="#5-上传github之前需要先更新代码" class="headerlink" title="5.上传github之前需要先更新代码"></a>5.上传github之前需要先更新代码</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-<h3 id="6-版本回退"><a href="#6-版本回退" class="headerlink" title="6.版本回退"></a>6.版本回退</h3><p>显示提交记录<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">--pretty=oneline</span></span><br><span class="line"><span class="number">34</span>f2272c833266e37249985a9b73fa27b38824bf append GPL</span><br><span class="line"><span class="number">34</span>aa48917e8fbfde2fcdaa32027074986008f2db <span class="built_in">write</span></span><br><span class="line">b2fde46ca5311231b2b77bc228ffe88a383455bf Update README.md</span><br><span class="line"><span class="number">602e3</span>bbb7a4def190cd5cff1dcea8f787b17dbb4 <span class="keyword">first</span> commit</span><br></pre></td></tr></table></figure></p>
-<p>如果想回退到上一个版本<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br></pre></td></tr></table></figure></p>
-<p>也可以回退到指定版本<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard 602e</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="7-版本回退后悔了，回到新版本"><a href="#7-版本回退后悔了，回到新版本" class="headerlink" title="7.版本回退后悔了，回到新版本"></a>7.版本回退后悔了，回到新版本</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git reflog</span><br><span class="line"><span class="number">602</span>e3bb HEAD@&#123;0&#125;: <span class="keyword">reset</span>: moving to <span class="number">602</span>e</span><br><span class="line"><span class="number">34</span>aa489 HEAD@&#123;1&#125;: <span class="keyword">reset</span>: moving to HEAD^</span><br><span class="line"><span class="number">34</span>f2272 HEAD@&#123;2&#125;: commit: append GPL</span><br><span class="line"><span class="number">34</span>aa489 HEAD@&#123;3&#125;: commit: <span class="keyword">write</span></span><br><span class="line">b2fde46 HEAD@&#123;4&#125;: pull origin master: Fast-forward</span><br><span class="line"><span class="number">602</span>e3bb HEAD@&#123;5&#125;: commit (initial): first commit</span><br></pre></td></tr></table></figure>
-<p>git reflog用来记录你的每一次命令<br>如果想回到commit: append GPL只需要<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard 34f2272</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="8-分支"><a href="#8-分支" class="headerlink" title="8.分支"></a>8.分支</h3><p> Git 来新建一个 static-pages 分支。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout -b static-pages</span></span><br></pre></td></tr></table></figure></p>
-<p>1.git checkout master 代表将当前分支切换到 master 分支上，master 分支是我们初始化 Git 时默认创建的主分支，其它分支都是基于主分支衍生出来的。<br>2.第二条命令 git checkout -b static-pages 将会为你创建一个名为 static-pages 的新分支。-b 选项表示创建指定名称的新分支。</p>
-<p>当完成分支任务时，将 Git 切换到 master 分支，并合并 static-pages 分支上的修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge static-pages</span></span><br></pre></td></tr></table></figure></p>
-<p>也可以删除不用的分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch -d static-pages</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="git每次提交需要输入密码"><a href="#git每次提交需要输入密码" class="headerlink" title="git每次提交需要输入密码"></a>git每次提交需要输入密码</h3><p>在C:\Users\用户  目录下其中有一个.gitconfig的文件，使用记事本打开。<br>如果之前配置了名字和email的话，在这里面会看到。追加<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">	<span class="attribute">helper</span>=store</span><br></pre></td></tr></table></figure></p>
-<p>下次我们再次输入用户名之后，git就会记住用户名密码，以后就不需再输入了。<br>这时在上述那个目录底下，可发现生成另外一个文件.git-credentials，里面记录的就是用户名密码了</p>
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a><strong>说明</strong></h3><p>hieu-le/active扩展可以用来为Laravel提供导航元素的 active 状态，比如菜单导航的选中等。</p>
+<h3 id="使用-Composer-安装-hieu-le-active"><a href="#使用-Composer-安装-hieu-le-active" class="headerlink" title="使用 Composer 安装 hieu-le/active"></a><strong>使用 Composer 安装 hieu-le/active</strong></h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">composer</span> <span class="meta">require</span> <span class="string">"hieu-le/active:~3.5"</span></span><br></pre></td></tr></table></figure>
+<p>如果在Laravel5.5以下版本，还需要手动添加：<br>修改 config/app 文件，添加 ServiceProvider：<br>在 providers 数组内追加如下内容<br><a id="more"></a><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'providers'</span> =&gt; [</span><br><span class="line">    ...</span><br><span class="line">    HieuLe\Active\ActiveServiceProvider::<span class="class"><span class="keyword">class</span>,<span class="type"></span></span></span><br><span class="line">],</span><br></pre></td></tr></table></figure></p>
+<p>在 aliases 数组内追加如下内容<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'aliases'</span> =&gt; [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'Active'</span> =&gt; HieuLe\Active\Facades\Active::<span class="class"><span class="keyword">class</span>,<span class="type"></span></span></span><br><span class="line">],</span><br></pre></td></tr></table></figure></p>
+<h3 id="active-class用法"><a href="#active-class用法" class="headerlink" title="active_class用法"></a><strong>active_class用法</strong></h3><p>函数定义如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Get the active class if the condition is not falsy</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>        $condition</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $activeClass</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> string $inactiveClass</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">active_class</span><span class="params">($condition, $activeClass = <span class="string">'active'</span>, $inactiveClass = <span class="string">''</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>函数说明：如果满足条件($condition),则函数返回 $activeClass ，否则返回 $inactiveClass<br>此外，这个扩展还包含了一些函数提供调用<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if_route</span><span class="params">()</span></span> - 判断当前对应的路由是否是指定的路由；</span><br><span class="line"><span class="function"><span class="title">if_route_param</span><span class="params">()</span></span> - 判断当前的 url 有无指定的路由参数。</span><br><span class="line"><span class="function"><span class="title">if_query</span><span class="params">()</span></span> - 判断指定的 GET 变量是否符合设置的值；</span><br><span class="line"><span class="function"><span class="title">if_uri</span><span class="params">()</span></span> - 判断当前的 url 是否满足指定的 url；</span><br><span class="line"><span class="function"><span class="title">if_route_pattern</span><span class="params">()</span></span> - 判断当前的路由是否包含指定的字符；</span><br><span class="line"><span class="function"><span class="title">if_uri_pattern</span><span class="params">()</span></span> - 判断当前的 url 是否含有指定的字符；</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -254,7 +243,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
         		</li>
       		
 		</ul>
@@ -321,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/29/technology/Git/git基本使用/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +324,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/08/29/technology/Git/【github】修改历史提交记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【github】修改历史提交记录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/28/technology/Notes/Hexo添加评论系统/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo添加评论系统</div>
+    <a href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【扩展】Carbon 时间显示</div>
       <i class="icon-circle-right"></i>
     </a>
   
