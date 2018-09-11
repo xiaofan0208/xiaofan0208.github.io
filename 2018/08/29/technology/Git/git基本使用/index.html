@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="git">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T13:00:59.087Z">
+<meta property="og:updated_time" content="2018-09-11T14:47:31.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基本使用">
 <meta name="twitter:description" content="git">
@@ -208,6 +208,8 @@
 <p>1.git checkout master 代表将当前分支切换到 master 分支上，master 分支是我们初始化 Git 时默认创建的主分支，其它分支都是基于主分支衍生出来的。<br>2.第二条命令 git checkout -b static-pages 将会为你创建一个名为 static-pages 的新分支。-b 选项表示创建指定名称的新分支。</p>
 <p>当完成分支任务时，将 Git 切换到 master 分支，并合并 static-pages 分支上的修改：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge static-pages</span></span><br></pre></td></tr></table></figure></p>
 <p>也可以删除不用的分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch -d static-pages</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="9-解除关联"><a href="#9-解除关联" class="headerlink" title="9.解除关联"></a>9.解除关联</h3><p>如果本地代码，已经关联了远程分支，则需要先解除关联<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote rm origin</span></span><br></pre></td></tr></table></figure></p>
+<p>解除后、重新关联新的远程分支，并将代码传上去<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="keyword">add</span><span class="bash"> origin https://github.com/&lt;个人账户&gt;/larabbs-weapp.git</span></span><br><span class="line"><span class="bash">git push -u origin master</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="git每次提交需要输入密码"><a href="#git每次提交需要输入密码" class="headerlink" title="git每次提交需要输入密码"></a>git每次提交需要输入密码</h3><p>在C:\Users\用户  目录下其中有一个.gitconfig的文件，使用记事本打开。<br>如果之前配置了名字和email的话，在这里面会看到。追加<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">	<span class="attribute">helper</span>=store</span><br></pre></td></tr></table></figure></p>
 <p>下次我们再次输入用户名之后，git就会记住用户名密码，以后就不需再输入了。<br>这时在上述那个目录底下，可发现生成另外一个文件.git-credentials，里面记录的就是用户名密码了</p>
 
@@ -574,11 +576,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,11 +588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
