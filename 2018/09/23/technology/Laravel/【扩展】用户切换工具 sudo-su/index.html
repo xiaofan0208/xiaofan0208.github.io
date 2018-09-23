@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 爱在西元前</title>
+  <title>用户切换工具 sudo-su | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="爱在西元前">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Laravel,php">
+<meta name="keywords" content="Laravel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用户切换工具 sudo-su">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/index.html">
 <meta property="og:site_name" content="爱在西元前">
+<meta property="og:description" content="Laravel,php">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-08T12:54:59.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爱在西元前">
+<meta name="twitter:title" content="用户切换工具 sudo-su">
+<meta name="twitter:description" content="Laravel,php">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -159,31 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-technology/Laravel/【扩展】用户切换工具 sudo-su" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:49:11.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/">用户切换工具 sudo-su</a>
+    <h1 class="article-title" itemprop="name">
+      用户切换工具 sudo-su
     </h1>
   
 
@@ -196,8 +184,64 @@
       <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/" class="pageViews">0</span>次
   </a>
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/" class="archive-article-date">
+  	<time datetime="2018-09-23T12:49:11.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>我们经常需要在项目中切换用户进行测试，传统的频繁登录、退出操作费时费力。<br>而使用 sudo-su 工具切换工具，可以提高效率。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><h4 id="1-使用-Composer-安装"><a href="#1-使用-Composer-安装" class="headerlink" title="1.使用 Composer 安装"></a>1.使用 Composer 安装</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">composer</span> <span class="meta">require</span> <span class="string">"viacreative/sudo-su:~1.1"</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="2-添加-Provider"><a href="#2-添加-Provider" class="headerlink" title="2.添加 Provider"></a>2.添加 Provider</h4><p>在AppServiceProvider文件中添加：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    public function register()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (app()-&gt;isLocal()) &#123;</span><br><span class="line">            $<span class="keyword">this</span>-&gt;app-&gt;register(\<span class="type">VIACreative</span>\<span class="type">SudoSu</span>\<span class="type">ServiceProvider</span>::<span class="class"><span class="keyword">class</span>)</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-发布资源文件"><a href="#3-发布资源文件" class="headerlink" title="3. 发布资源文件"></a>3. 发布资源文件</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan <span class="string">vendor:</span>publish --provider=<span class="string">"VIACreative\SudoSu\ServiceProvider"</span></span><br></pre></td></tr></table></figure>
+<p>会生成：<br>/public/sudo-su 前端 CSS 资源存放文件夹；<br>config/sudosu.php 配置信息文件；</p>
+<h4 id="4-修改配置文件"><a href="#4-修改配置文件" class="headerlink" title="4. 修改配置文件"></a>4. 修改配置文件</h4><p>打开 config/sudosu.php 文件<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> [</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 允许使用的顶级域名</span></span><br><span class="line">    <span class="string">'allowed_tlds'</span> =&gt; [<span class="string">'dev'</span>, <span class="string">'local'</span>, <span class="string">'test'</span>],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 用户模型</span></span><br><span class="line">    <span class="string">'user_model'</span> =&gt; App\Models\User::<span class="class"><span class="keyword">class</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">];</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：Sudosu 为了避免在生产环境误开启了这样功能，所以设置了 allowed_tlds 域名限制，比如我们本地测试环境的地址是<a href="http://larabbs.test/，" target="_blank" rel="noopener">http://larabbs.test/，</a><br>就在 allowed_tlds 添加 test 后缀。</p>
+<h4 id="5-在模板中使用"><a href="#5-在模板中使用" class="headerlink" title="5.在模板中使用"></a>5.在模板中使用</h4><p>在我们的视图布局文件中加入<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@if</span> (app()-&gt;isLocal())</span><br><span class="line">    <span class="variable">@include</span>(<span class="string">'sudosu::user-selector'</span>)</span><br><span class="line"><span class="variable">@endif</span></span><br></pre></td></tr></table></figure></p>
+<p>这样就可以在页面上看到右下角的图标了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/my/reward_alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/my/reward_wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -209,7 +253,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -222,543 +266,134 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/23/technology/Laravel/【扩展】用户切换工具 sudo-su/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/technology/Laravel/【扩展】性能调试工具 laravel-debugbar/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:49:11.224Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/23/technology/Laravel/【扩展】性能调试工具 laravel-debugbar/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">性能调试工具 laravel-debugbar</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/technology/Laravel/【扩展】性能调试工具 laravel-debugbar/">性能调试工具 laravel-debugbar</a>
-    </h1>
+  
   
 
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/23/technology/Laravel/【扩展】性能调试工具 laravel-debugbar/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/technology/Laravel/【扩展】Laravel-permission权限管理扩展包/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:49:11.216Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/technology/Laravel/【扩展】Laravel-permission权限管理扩展包/">Laravel-permission权限管理扩展包</a>
-    </h1>
+
   
 
 
 
 
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/23/technology/Laravel/【扩展】Laravel-permission权限管理扩展包/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:49:11.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/">Laravel 5.x Scaffold Generator代码生成器</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" class="archive-article-date">
-  	<time datetime="2018-09-09T02:58:14.207Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/">hieu-le active判断导航元素的active状态</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/" class="archive-article-date">
-  	<time datetime="2018-09-08T12:55:10.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/">【扩展】Carbon 时间显示</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/08/technology/Laravel/【扩展】Carbon 时间显示/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/technology/Python/python文件打包成exe/" class="archive-article-date">
-  	<time datetime="2018-09-07T13:48:10.793Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/technology/Python/python文件打包成exe/">python文件打包成exe</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/python文件打包成exe/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/technology/Python/Pillow教程(二)/" class="archive-article-date">
-  	<time datetime="2018-09-07T13:43:56.840Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/technology/Python/Pillow教程(二)/">Pillow教程(二)</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/Pillow教程(二)/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/technology/Python/Pillow教程(一)/" class="archive-article-date">
-  	<time datetime="2018-09-07T13:43:56.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/technology/Python/Pillow教程(一)/">Pillow教程(一)</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/Pillow教程(一)/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/technology/Python/分割带有plist的图片(TexturePacker)/" class="archive-article-date">
-  	<time datetime="2018-09-07T13:42:03.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/technology/Python/分割带有plist的图片(TexturePacker)/">分割带有plist的图片(TexturePacker)</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/07/technology/Python/分割带有plist的图片(TexturePacker)/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "me6MtDOe9OsBQKDjUoL6ICaw-gzGzoHsz",
+            app_key: "2l8raTqXj6gisW7E9KQoUuF2",
+            placeholder: "ヾﾉ≧∀≦)o 来呀！快活呀！~",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 10
+    });
+</script>
+  </section>
 
 
           </div>
@@ -781,8 +416,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
