@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/dbgp_proxy.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/servers.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/Run_configurations.PNG">
-<meta property="og:updated_time" content="2018-10-28T14:12:45.154Z">
+<meta property="og:updated_time" content="2018-10-28T14:25:52.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Laravel】在PhpStorm中使用XDebug调试">
 <meta name="twitter:description" content="Laravel,php">
@@ -200,19 +200,19 @@
       
         <h3 id="php配置"><a href="#php配置" class="headerlink" title="php配置"></a>php配置</h3><p>1.首先下载 php_xdebug.dll 文件放至 php安装文件夹的ext下面<br>2.在php.ini中配置,如：<br><a id="more"></a><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">zend_extension</span>=<span class="string">"D:/DevelopmentTools/PhpSetup/php-7.1.18/ext/php_xdebug-2.6.0-7.1-vc14-x86_64.dll"</span>    </span><br><span class="line">xdebug.<span class="attribute">remote_enable</span>=on</span><br><span class="line">xdebug.<span class="attribute">collect_params</span>=3</span><br><span class="line">;xdebug.<span class="attribute">collect_return</span>=1</span><br><span class="line">xdebug.<span class="attribute">collect_vars</span>=1</span><br><span class="line">xdebug.<span class="attribute">collect_assignments</span>=1</span><br><span class="line">xdebug.<span class="attribute">collect_includes</span>=1</span><br><span class="line">xdebug.<span class="attribute">trace_format</span>=0</span><br><span class="line">xdebug.<span class="attribute">auto_trace</span>=0</span><br><span class="line">;xdebug.<span class="attribute">trace_options</span>=1</span><br><span class="line">;xdebug.profiler_enable =on</span><br><span class="line">;xdebug.profiler_enable_trigger = off</span><br><span class="line">;xdebug.profiler_output_name =cachegrind.out.%t.%p</span><br><span class="line">;xdebug.<span class="attribute">show_local_vars</span>=1</span><br><span class="line">xdebug.remote_handler = dbgp</span><br><span class="line">xdebug.remote_host= 192.168.10.10</span><br><span class="line">xdebug.remote_port = 9000</span><br><span class="line">xdebug.<span class="attribute">cli_color</span>=2</span><br><span class="line">xdebug.<span class="attribute">show_exception_trace</span>=0</span><br><span class="line">xdebug.<span class="attribute">show_mem_delta</span>=1</span><br><span class="line">xdebug.<span class="attribute">var_display_max_children</span>=-1</span><br><span class="line">xdebug.<span class="attribute">var_display_max_data</span>=-1</span><br><span class="line">xdebug.<span class="attribute">var_display_max_depth</span>=6</span><br><span class="line">xdebug.<span class="attribute">idekey</span>=<span class="string">"vagrant"</span></span><br></pre></td></tr></table></figure></p>
 <p>上面的配置是我随意配置的，不一定正确，注意 因为我们使用的laravel是在homestead中的，所以地址是 “192.168.10.10”，<br>别忘了重启服务</p>
-<h3 id="phpstorm进行配置"><a href="#phpstorm进行配置" class="headerlink" title="phpstorm进行配置"></a>phpstorm进行配置</h3><h4 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h4><p>先打开 File-&gt;Settings-&gt;Languages &amp; Frameworks -&gt; PHP -&gt; Debug<br>查看 Xdebug 下面的 Debug port 端口是否和 xdebug.remote_port 一致。<br><img src="images/debug端口.PNG" alt="avatar"></p>
+<h3 id="phpstorm进行配置"><a href="#phpstorm进行配置" class="headerlink" title="phpstorm进行配置"></a>phpstorm进行配置</h3><h4 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h4><p>先打开 File-&gt;Settings-&gt;Languages &amp; Frameworks -&gt; PHP -&gt; Debug<br>查看 Xdebug 下面的 Debug port 端口是否和 xdebug.remote_port 一致。<br><img src="/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/debug端口.PNG" alt="avatar"></p>
 <h4 id="DBGp-Proxy"><a href="#DBGp-Proxy" class="headerlink" title="DBGp Proxy"></a>DBGp Proxy</h4><p>在Languages &amp; Frameworks -&gt; PHP -&gt; Debug -&gt; DBGp Proxy中，</p>
 <ul>
 <li>IDE key ：xdebug配置信息中的ide_key</li>
 <li>Host：Homestead.yaml的IP</li>
-<li>Port：大多数情况是80<br><img src="images/dbgp_proxy.PNG" alt="avatar"></li>
+<li>Port：大多数情况是80<br><img src="/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/dbgp_proxy.PNG" alt="avatar"></li>
 </ul>
 <h4 id="Servers"><a href="#Servers" class="headerlink" title="Servers"></a>Servers</h4><p>在Languages &amp; Frameworks -&gt; PHP -&gt; Servers 中找到配置，点击+添加一个Server</p>
 <ul>
 <li>Name：随意</li>
-<li>Host：homestead.yaml文件的本地地址<br><img src="images/servers.PNG" alt="avatar"></li>
+<li>Host：homestead.yaml文件的本地地址<br><img src="/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/servers.PNG" alt="avatar"></li>
 </ul>
-<h4 id="Edit-Configurations"><a href="#Edit-Configurations" class="headerlink" title="Edit Configurations"></a>Edit Configurations</h4><p>在菜单中找到 Run -&gt; Edit Configurations, 添加一个 PHP Web Application,<br><img src="images/Run_configurations.PNG" alt="avatar"></p>
+<h4 id="Edit-Configurations"><a href="#Edit-Configurations" class="headerlink" title="Edit Configurations"></a>Edit Configurations</h4><p>在菜单中找到 Run -&gt; Edit Configurations, 添加一个 PHP Web Application,<br><img src="/2018/10/28/technology/Laravel/【Laravel】在PhpStorm中使用XDebug调试/images/Run_configurations.PNG" alt="avatar"></p>
 <h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>最后在菜单中的右上角的下拉菜单中，选择我们刚才设置的配置，这里是Blog,然后点击旁边的小甲虫即可。</p>
 
       
@@ -586,10 +586,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -599,6 +595,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
             
             <div class="clearfix"></div>
