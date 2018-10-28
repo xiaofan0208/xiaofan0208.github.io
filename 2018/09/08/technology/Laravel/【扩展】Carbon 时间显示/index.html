@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="Laravel,php,Carbon">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T12:56:29.529Z">
+<meta property="og:updated_time" content="2018-10-28T14:06:02.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【扩展】Carbon 时间显示">
 <meta name="twitter:description" content="Laravel,php,Carbon">
@@ -194,8 +194,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>Carbon 是 PHP 知名的 DateTime 操作扩展，Laravel 将其默认集成到了框架中</p>
-<p>其中比较常用的方法是 diffForHumans ，默认是英文的，如需中文显示，要进行本地化啊设置。<br>在AppServiceProvider中调用Carbon 的 setLocale 方法即可<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    \Carbon\Carbon::setLocale(<span class="string">'zh'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
+<p>其中比较常用的方法是 diffForHumans ，默认是英文的，如需中文显示，要进行本地化啊设置。<br>在AppServiceProvider中调用Carbon 的 setLocale 方法即可<br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    \Carbon\Carbon::setLocale(<span class="string">'zh'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a><strong>使用</strong></h3><h4 id="在前端页面调用如下："><a href="#在前端页面调用如下：" class="headerlink" title="在前端页面调用如下："></a>在前端页面调用如下：</h4><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; $<span class="function"><span class="title">user</span>-&gt;</span><span class="function"><span class="title">created_at</span>-&gt;</span>diffForHumans() &#125;&#125;</span><br></pre></td></tr></table></figure>
 <p>友好时间戳的显示。</p>
 <h4 id="后端使用："><a href="#后端使用：" class="headerlink" title="后端使用："></a>后端使用：</h4><p>需要先引入<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span>  <span class="title">Carbon</span>\<span class="title">Carbon</span>;</span><br></pre></td></tr></table></figure></p>
@@ -572,6 +571,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
@@ -580,15 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
