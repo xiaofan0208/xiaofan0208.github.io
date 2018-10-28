@@ -161,6 +161,485 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-technology/MySQL/【MySQL必知必会】创建和操作表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/">【MySQL必知必会】创建和操作表</a>
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/" class="archive-article-date">
+  	<time datetime="2018-10-28T13:57:06.608Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> customers</span><br><span class="line">(</span><br><span class="line">	cust_id    <span class="built_in">int</span>       <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT ,</span><br><span class="line">	cust_name  <span class="built_in">char</span>(<span class="number">50</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    cust_city  <span class="built_in">char</span>(<span class="number">50</span>)  <span class="keyword">NOT</span> <span class="literal">NULL</span>  <span class="keyword">DEFAULT</span> <span class="string">'南京'</span>,</span><br><span class="line">    cust_email <span class="built_in">char</span>(<span class="number">255</span>) <span class="literal">NULL</span>,</span><br><span class="line">    PRIMARY <span class="keyword">KEY</span> (cust_id,cust_name)</span><br><span class="line">)<span class="keyword">ENGINE</span>=<span class="keyword">INNODB</span>;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-technology/MySQL/【MySQL必知必会】插入&amp;更新&amp;删除数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/28/technology/MySQL/【MySQL必知必会】插入&更新&删除数据/">【MySQL必知必会】插入&amp;更新&amp;删除数据</a>
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/10/28/technology/MySQL/【MySQL必知必会】插入&更新&删除数据/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/10/28/technology/MySQL/【MySQL必知必会】插入&更新&删除数据/" class="archive-article-date">
+  	<time datetime="2018-10-28T13:57:06.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><ol>
+<li>插入一行<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span>(username ,<span class="keyword">password</span>, email ) <span class="keyword">VALUES</span>(<span class="string">'www'</span>,<span class="string">'123'</span>,<span class="string">'www@123.com'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2018/10/28/technology/MySQL/【MySQL必知必会】插入&更新&删除数据/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/28/technology/MySQL/【MySQL必知必会】插入&更新&删除数据/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-technology/MySQL/【MySQL必知必会】检索数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/28/technology/MySQL/【MySQL必知必会】检索数据/">【MySQL必知必会】检索数据</a>
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/10/28/technology/MySQL/【MySQL必知必会】检索数据/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/10/28/technology/MySQL/【MySQL必知必会】检索数据/" class="archive-article-date">
+  	<time datetime="2018-10-28T13:57:06.603Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="普通检索数据"><a href="#普通检索数据" class="headerlink" title="普通检索数据"></a>普通检索数据</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 检索单个列 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname <span class="keyword">FROM</span> guestbook;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 检索多个列 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname,email <span class="keyword">FROM</span> guestbook;</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment">/* 检索所有列 */</span></span><br><span class="line"><span class="keyword">SELECT</span> *<span class="keyword">FROM</span> guestbook;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* DISTINCT 关键字，只返回不重复的值 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> nickname <span class="keyword">FROM</span> guestbook;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* LIMIT 限制不能够超过的行数 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname <span class="keyword">FROM</span> guestbook <span class="keyword">LIMIT</span> <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* LIMIT 5,3   指定返回从 行5 开始的 3行数据 </span></span><br><span class="line"><span class="comment">	 注意：这里的行5实际是第6行，因为第一行为行0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname <span class="keyword">FROM</span> guestbook <span class="keyword">LIMIT</span> <span class="number">5</span> , <span class="number">3</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 此处等同于 LIMIT 5,3  ，只是便于查看  */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname <span class="keyword">FROM</span> guestbook <span class="keyword">LIMIT</span> <span class="number">3</span> <span class="keyword">OFFSET</span> <span class="number">5</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用完全限定的表名 */</span></span><br><span class="line"><span class="keyword">SELECT</span> guestbook.nickname <span class="keyword">FROM</span> guestbook;</span><br></pre></td></tr></table></figure>
+<h3 id="排序检索数据"><a href="#排序检索数据" class="headerlink" title="排序检索数据"></a>排序检索数据</h3><p>可以使用ORDER BY子句对一个或者多个列进行排序<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 按照 nickname 字母顺序进行排序 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname <span class="keyword">FROM</span> guestbook <span class="keyword">ORDER</span> <span class="keyword">BY</span> nickname;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 按照多个列排序，仅在nickname相同的时候，以createtime排序 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname,email,createtime <span class="keyword">FROM</span> guestbook <span class="keyword">ORDER</span> <span class="keyword">BY</span> nickname,createtime;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  DESC：降序排序    ASC: 升序排序，默认为升序 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname , createtime <span class="keyword">FROM</span> guestbook  <span class="keyword">ORDER</span> <span class="keyword">BY</span> createtime <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* createtime降序排序， nickname仍然升序排序 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname , createtime <span class="keyword">FROM</span> guestbook  <span class="keyword">ORDER</span> <span class="keyword">BY</span> createtime <span class="keyword">DESC</span> ,nickname ;</span><br></pre></td></tr></table></figure></p>
+<h3 id="过滤数据"><a href="#过滤数据" class="headerlink" title="过滤数据"></a>过滤数据</h3><p>使用where单一子句进行查询<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定搜索条件过滤 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname,email <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> nickname=<span class="string">'Tom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> nickname,email <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> nickname=<span class="string">'Tom'</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> email;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 指定范围 */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname,price <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> price <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">AND</span> <span class="number">50</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 检索具有NULL值的列 ， 返回没有价格的数据  */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname,email <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> price <span class="keyword">is</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></p>
+<p>使用where子句进行更复杂的查询<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 多个where子句 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,nickname <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> price &gt; <span class="number">10</span> <span class="keyword">AND</span> nickname =<span class="string">'Tom'</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  OR 匹配任一条件即可 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,nickname,price <span class="keyword">FROM</span> guestbook <span class="keyword">WHERE</span> price &gt; <span class="number">50</span> <span class="keyword">OR</span> price &lt; <span class="number">10</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,nickname,price <span class="keyword">FROM</span> guestbook </span><br><span class="line"><span class="keyword">WHERE</span>  ( <span class="keyword">id</span> = <span class="number">5</span> <span class="keyword">OR</span> <span class="keyword">id</span> = <span class="number">10</span> )  <span class="keyword">AND</span> price &gt; <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  IN操作符指定条件范围，每个条件都可以匹配 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,nickname,price <span class="keyword">FROM</span> guestbook </span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">IN</span> ( <span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> price <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  WHERE子句中的NOT操作符只有一个功能，就是否定它后面的所有条件 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,nickname,price <span class="keyword">FROM</span> guestbook  <span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">NOT</span> <span class="keyword">IN</span>( <span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure></p>
+<p>注意：IN操作符在功能上和OR相同，但是IN语法更清晰，执行速度更快，<br>此外，IN还可以包含其他的SELECT查询语句。</p>
+<h3 id="通配符过滤"><a href="#通配符过滤" class="headerlink" title="通配符过滤"></a>通配符过滤</h3><p>通配符 用来匹配值的一部分特殊字符，需要使用LIKE操作符<br>百分号(%)通配符表示任何字符出现的任意次数<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 查找名字已 w 开头的数据  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,<span class="keyword">name</span>,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'w%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 查找名字里带有ha的数据 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,<span class="keyword">name</span>,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'%ha%'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>下划线(_)通配符 用来只匹配单个字符而不是多个字符，不能多也不能少<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 查找名字 后缀是 “iao”的数据 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,<span class="keyword">name</span>,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'_iao'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>注意：通配符搜索处理一般比其他搜索时间要长，不要过度使用。</p>
+<h3 id="正则表达式搜索"><a href="#正则表达式搜索" class="headerlink" title="正则表达式搜索"></a>正则表达式搜索</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 查找名字里带有 Mr 的数据 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'Mr'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 相当于使用or ,只要匹配其中之一就行  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'Mr|xi'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 匹配[]中任意字符即可 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'[xy]'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 匹配范围： 1 - 9之间的任一数字  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> email REGEXP <span class="string">'[1-9]'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 匹配特殊字符 ，\\ 转义符  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,email <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">name</span> REGEXP <span class="string">'\\.'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="计算字段"><a href="#计算字段" class="headerlink" title="计算字段"></a>计算字段</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CONCAT拼接串 ,返回如：  xiao ( xiao@123.com )    */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>(<span class="keyword">name</span>,<span class="string">' ( '</span>,email , <span class="string">' ) '</span>) <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  TRIM 去掉两边的空格  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>( <span class="keyword">TRIM</span>( <span class="keyword">name</span> ) ,<span class="string">' ( '</span>,email , <span class="string">' ) '</span>) <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* as 起别名 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CONCAT</span>( <span class="keyword">TRIM</span>(<span class="keyword">name</span>) ,<span class="string">' ( '</span>,<span class="keyword">TRIM</span>(email) , <span class="string">' ) '</span>) <span class="keyword">as</span> user_title <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="数据处理函数"><a href="#数据处理函数" class="headerlink" title="数据处理函数"></a>数据处理函数</h3><ol>
+<li>文本处理函数<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  UPPER将文本大写 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">UPPER</span>(<span class="keyword">name</span>) <span class="keyword">as</span>  name_upcase <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>常用文本处理函数还有很多：<br>| 函数      | 说明 |<br>| —— | —— |<br>|Left()     |  返回串左边的字符|<br>|Length()|    返回串的长度|<br>|Locate()|    找出串的一个子串|<br>|Lower()|    将串转换为小写|<br>|LTrim()|    去掉串左边的空格|<br>|Right()|    返回串右边的字符|<br>|RTrim()|    去掉串右边的空格|<br>|Soundex()|    返回串的SOUNDEX值|<br>|SubString()|    返回子串的字符|<br>|Upper()    |将串转换为大写|</p>
+<ol start="2">
+<li>时间处理函数<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Date 是日期(1996-08-09)   Time 是时间(10:31:59) */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> ,<span class="built_in">Date</span>(created_at) , <span class="keyword">Time</span>(created_at) <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 查询日期范围  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>,created_at <span class="keyword">FROM</span> <span class="keyword">users</span> </span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">DATE</span>(created_at) <span class="keyword">BETWEEN</span> <span class="string">'2001-02-08'</span> <span class="keyword">AND</span> <span class="string">'2018-02-08'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 根据年份和月份查找 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>,created_at <span class="keyword">FROM</span> <span class="keyword">users</span> </span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(created_at) = <span class="number">2018</span> <span class="keyword">AND</span> <span class="keyword">MONTH</span>(created_at) = <span class="number">6</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>常用日期和时间处理函数:<br>|函数    | 说明 |<br>| —— | —— |<br>|AddDate()|    增加一个日期（天、周）|<br>|AddTime()|    增加一个时间（时，分）|<br>|CurDate()|    返回当前日期|<br>|CurTime()|    返回当前时间|<br>|Date()      | 返回日期时间的日期部分|<br>|DateDiff()|  计算两个日期之差|<br>|Date_Add()    | 高度灵活的日期计算函数|<br>|Date_Format| 返回一个格式化的日期或字符串|<br>|Day()       | 返回一个日期的天数部分|<br>|DayOfWeek()| 对于一个日期返回对应的星期几|<br>|Hour()        | 返回一个时间的小时部分|<br>|Minute()    | 返回一个时间的分钟部分|<br>|Month()    | 返回一个时间的月份部分|<br>|Now()        | 返回当前日期|<br>|Second()    | 返回一个时间的秒部分|<br>|Time()        | 返回一个日期时间的时间部分|<br>|Year()        | 返回一个日期的年份部分|</p>
+<ol start="3">
+<li>数值处理函数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abs()</td>
+<td>返回一个数的绝对值</td>
+</tr>
+<tr>
+<td>Cos()</td>
+<td>返回一个角度的余弦</td>
+</tr>
+<tr>
+<td>Exp()</td>
+<td>返回一个数的指数值</td>
+</tr>
+<tr>
+<td>Mod()</td>
+<td>返回除操作的余数</td>
+</tr>
+<tr>
+<td>Pi()</td>
+<td>返回圆周率</td>
+</tr>
+<tr>
+<td>Rand()</td>
+<td>返回一个随机数</td>
+</tr>
+<tr>
+<td>Sin()</td>
+<td>返回一个角度的正弦</td>
+</tr>
+<tr>
+<td>Sqrt()</td>
+<td>返回一个数的平方根</td>
+</tr>
+<tr>
+<td>Tan()</td>
+<td>返回一个数的正切</td>
+</tr>
+</tbody>
+</table>
+<h3 id="汇总数据"><a href="#汇总数据" class="headerlink" title="汇总数据"></a>汇总数据</h3><ol>
+<li><p>SQL聚集函数<br>|函数 |    说明|<br>| —— | —— |<br>| Max()  |  求最大|<br>| Min()  |  求最小|<br>| Sum()  |  求总和|<br>| Avg()   | 求平均|<br>| Count()|  计算总行数|</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  获取产品的平均价格  */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>( price) <span class="keyword">AS</span> avg_price <span class="keyword">FROM</span> guestbook ;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 对所有行计数 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> <span class="keyword">num</span> <span class="keyword">FROM</span> guestbook;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>聚集不同值<br>在表中，可能会包含重复值，可以使用DISTINCT 用于返回唯一不同的值。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 获取唯一的价格 */</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">DISTINCT</span> price  <span class="keyword">FROM</span> guestbook ；</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="keyword">DISTINCT</span> price) <span class="keyword">AS</span> avg_price <span class="keyword">FROM</span> guestbook ；</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="分组数据"><a href="#分组数据" class="headerlink" title="分组数据"></a>分组数据</h3><ol>
+<li>创建分组<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 根据nickname分组计算个数  */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname ,<span class="built_in">COUNT</span>(*) <span class="keyword">FROM</span> guestbook <span class="keyword">GROUP</span> <span class="keyword">BY</span> nickname  ;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>GROUP BY子句是SELECT语句的可选子句,GROUP BY子句必须出现在FROM和WHERE子句之后</p>
+<ol start="2">
+<li>过滤分组<br>where过滤指定的行而不是分组，可以使用HAVING ， HAVING 类似于where,只是关键字不同。<br>where在数据分组前过滤，HAVING在数据分组后进行过滤。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 根据nickname分组计算个数,并过滤出&gt;= 2的数据  */</span></span><br><span class="line"><span class="keyword">SELECT</span> nickname ,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> guestbook  <span class="keyword">WHERE</span> <span class="keyword">id</span> &lt;<span class="number">100</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> nickname <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) &gt;= <span class="number">2</span> ;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="联结"><a href="#联结" class="headerlink" title="联结"></a>联结</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 等值联结：statuses表中的外键user_id 是users的主键  */</span></span><br><span class="line"><span class="keyword">SELECT</span> users.id,<span class="keyword">name</span>,email,<span class="keyword">content</span> <span class="keyword">FROM</span> <span class="keyword">users</span>,statuses </span><br><span class="line"><span class="keyword">WHERE</span> users.id = statuses.user_id  <span class="keyword">ORDER</span> <span class="keyword">BY</span> users.id;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*  使用INNER JOIN   ON      */</span></span><br><span class="line"><span class="keyword">SELECT</span> users.id,<span class="keyword">name</span>,email,<span class="keyword">content</span> <span class="keyword">FROM</span> <span class="keyword">users</span> </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> statuses <span class="keyword">ON</span> users.id = statuses.user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> users.id;</span><br></pre></td></tr></table></figure>
+<h3 id="组合查询-union"><a href="#组合查询-union" class="headerlink" title="组合查询(union)"></a>组合查询(union)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  使用UNION把多次查询的结果组合成一个结果集 */</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> &lt; <span class="number">5</span></span><br><span class="line"><span class="keyword">UNION</span> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> <span class="keyword">id</span> &gt; <span class="number">6</span> &amp;&amp; <span class="keyword">id</span>&lt; <span class="number">10</span> ;</span><br></pre></td></tr></table></figure>
+<p>注意 UNION 会自动过滤重复的列表，如果不需要过滤请使用 UNION ALL<br>组合查询 和 多个where子句查询完成的工作相同。</p>
+<h3 id="全文本搜索"><a href="#全文本搜索" class="headerlink" title="全文本搜索"></a>全文本搜索</h3><p>创建表时启用全文本搜索，使用fulltext对note_text进行索引，在增删改查时，索引自动更新。<br>不要在导入数据时使用fulltext。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> productnotes</span><br><span class="line">(</span><br><span class="line">   note_id             <span class="built_in">int</span>         <span class="keyword">not</span> <span class="literal">null</span>  auto_increment,</span><br><span class="line">   prod_id             <span class="built_in">char</span>(<span class="number">10</span>)    <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">   note_date           datetime    <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">   note_text           <span class="built_in">text</span>        <span class="literal">null</span>,</span><br><span class="line">   primary <span class="keyword">key</span>(note_id),</span><br><span class="line">   fulltext(note_text)</span><br><span class="line">)  <span class="keyword">engine</span> = MyISAM;</span><br></pre></td></tr></table></figure></p>
+<p>暂时不太清楚全文本搜索，待以后查找</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/28/technology/MySQL/【MySQL必知必会】检索数据/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-technology/Git/【Git】使用git pull更新和本地冲突" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/28/technology/Git/【Git】使用git pull更新和本地冲突/">【Git】使用git pull更新和本地冲突</a>
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/10/28/technology/Git/【Git】使用git pull更新和本地冲突/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/10/28/technology/Git/【Git】使用git pull更新和本地冲突/" class="archive-article-date">
+  	<time datetime="2018-10-28T13:54:33.069Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="git-pull更新与本地冲突"><a href="#git-pull更新与本地冲突" class="headerlink" title="git pull更新与本地冲突"></a>git pull更新与本地冲突</h3><p>使用git pull代码时，经常会碰到有冲突的情况，提示信息如下：<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>Your local changes to 'app/Admin/routes.php' would be overwritten by merge.  </span><br><span class="line">Aborting. Please, commit your changes or stash them before you can merge.</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/10/28/technology/Git/【Git】使用git pull更新和本地冲突/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/28/technology/Git/【Git】使用git pull更新和本地冲突/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-technology/PHP/【深入PHP面向对象模式与实践】笔记(装饰模式)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -742,394 +1221,6 @@
 
 
   
-    <article id="post-technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/">【深入PHP面向对象模式与实践】笔记(单例模式)</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/" class="pageViews">0</span>次
-  </a>
-
-        
-        <a href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/" class="archive-article-date">
-  	<time datetime="2018-09-30T15:14:49.639Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>示例：<br>
-        
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/">【深入PHP面向对象模式与实践】笔记(组合模式)</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/" class="pageViews">0</span>次
-  </a>
-
-        
-        <a href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/" class="archive-article-date">
-  	<time datetime="2018-09-30T15:14:49.589Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>组合模式是在集合和组件之间关系建立模型，是以树形结构表示“部分-整体”的层次结构，组合模式使得用户对单个对象和组合对象的使用具有一致性。<br>个人理解，组合模式可以类似于文件夹的目录结构。比如有一个书籍文件夹books，books下面可能含有书籍如《PHP手册》以及其他的文件夹如JAVA书籍等。<br>而一致性表示这些对象都拥有相同的接口<br>
-        
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-technology/PHP/【PHP】header函数用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/technology/PHP/【PHP】header函数用法/">【PHP】header函数用法</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/PHP/【PHP】header函数用法/" class="pageViews">0</span>次
-  </a>
-
-        
-        <a href="/2018/09/30/technology/PHP/【PHP】header函数用法/" class="archive-article-date">
-  	<time datetime="2018-09-30T15:10:48.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-跳转页面"><a href="#1-跳转页面" class="headerlink" title="1. 跳转页面"></a>1. 跳转页面</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">'Location:'</span>.<span class="variable">$url</span>);  <span class="regexp">//</span>Location和<span class="string">":"</span>之间无空格。</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【PHP】header函数用法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【PHP】header函数用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-technology/PHP/【PHP】http请求常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/technology/PHP/【PHP】http请求常用方法/">【PHP】http请求常用方法</a>
-    </h1>
-  
-
-
-
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/PHP/【PHP】http请求常用方法/" class="pageViews">0</span>次
-  </a>
-
-        
-        <a href="/2018/09/30/technology/PHP/【PHP】http请求常用方法/" class="archive-article-date">
-  	<time datetime="2018-09-30T15:10:48.682Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="file-get-contents"><a href="#file-get-contents" class="headerlink" title="file_get_contents"></a>file_get_contents</h3><p>file_get_contents() 函数把整个文件读入一个字符串中，此函数可以用来打开一个网络地址 可以实现简单的网页抓取。<br>也可以读取本地的文件，以及模拟post请求。<br>
-        
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【PHP】http请求常用方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/30/technology/PHP/【PHP】http请求常用方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1303,10 +1394,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
@@ -1315,11 +1402,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
             
             <div class="clearfix"></div>
