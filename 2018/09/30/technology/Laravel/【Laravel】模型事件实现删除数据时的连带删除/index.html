@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>爱在西元前</title>
+  <title>【Laravel】模型事件实现删除数据时的连带删除 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介我们在删除一条数据时，需要删除其关联数据，如删除用户后连带删除其创建的文章和图片。从实现机制有两种类型 代码监听器利用 Eloquent 监控器 的 deleted 事件连带删除，好处是灵活、扩展性强，不受底层数据库约束，坏处当删除时不添加监听器，就会出现漏删 外键约束利用 MySQL 自带的外键约束功能，好处是数据一致性强，基本上不会出现漏删，坏处是有些数据库不支持，如 SQLite 代码监">
+  <meta name="description" content="Laravel,php">
+<meta name="keywords" content="Laravel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="爱在西元前">
+<meta property="og:title" content="【Laravel】模型事件实现删除数据时的连带删除">
 <meta property="og:url" content="http://yoursite.com/2018/09/30/technology/Laravel/【Laravel】模型事件实现删除数据时的连带删除/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="简介我们在删除一条数据时，需要删除其关联数据，如删除用户后连带删除其创建的文章和图片。从实现机制有两种类型 代码监听器利用 Eloquent 监控器 的 deleted 事件连带删除，好处是灵活、扩展性强，不受底层数据库约束，坏处当删除时不添加监听器，就会出现漏删 外键约束利用 MySQL 自带的外键约束功能，好处是数据一致性强，基本上不会出现漏删，坏处是有些数据库不支持，如 SQLite 代码监">
+<meta property="og:description" content="Laravel,php">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-21T09:36:11.574Z">
+<meta property="og:updated_time" content="2018-10-29T13:22:14.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爱在西元前">
-<meta name="twitter:description" content="简介我们在删除一条数据时，需要删除其关联数据，如删除用户后连带删除其创建的文章和图片。从实现机制有两种类型 代码监听器利用 Eloquent 监控器 的 deleted 事件连带删除，好处是灵活、扩展性强，不受底层数据库约束，坏处当删除时不添加监听器，就会出现漏删 外键约束利用 MySQL 自带的外键约束功能，好处是数据一致性强，基本上不会出现漏删，坏处是有些数据库不支持，如 SQLite 代码监">
+<meta name="twitter:title" content="【Laravel】模型事件实现删除数据时的连带删除">
+<meta name="twitter:description" content="Laravel,php">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -166,11 +167,35 @@
             <article id="post-technology/Laravel/【Laravel】模型事件实现删除数据时的连带删除" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【Laravel】模型事件实现删除数据时的连带删除
+    </h1>
+  
+
+
+
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/Laravel/【Laravel】模型事件实现删除数据时的连带删除/" class="pageViews">0</span>次
+  </a>
+
+        
+        <a href="/2018/09/30/technology/Laravel/【Laravel】模型事件实现删除数据时的连带删除/" class="archive-article-date">
+  	<time datetime="2018-09-30T15:09:19.411Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>我们在删除一条数据时，需要删除其关联数据，如删除用户后连带删除其创建的文章和图片。<br>从实现机制有两种类型</p>
 <h4 id="代码监听器"><a href="#代码监听器" class="headerlink" title="代码监听器"></a>代码监听器</h4><p>利用 Eloquent 监控器 的 deleted 事件连带删除，好处是灵活、扩展性强，不受底层数据库约束，坏处当删除时不添加监听器，就会出现漏删</p>
-<h4 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h4><p>利用 MySQL 自带的外键约束功能，好处是数据一致性强，基本上不会出现漏删，坏处是有些数据库不支持，如 SQLite</p>
+<h4 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h4><p>利用 MySQL 自带的外键约束功能，好处是数据一致性强，基本上不会出现漏删，坏处是有些数据库不支持，如 SQLite<br><a id="more"></a></p>
 <h3 id="代码监听器-1"><a href="#代码监听器-1" class="headerlink" title="代码监听器"></a><strong>代码监听器</strong></h3><p>利用 Eloquent 监控器实现删除，也有两种方式，</p>
 <ol>
 <li><p>第一种可以直接在模型类中实现：</p>
@@ -223,7 +248,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -526,7 +573,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,15 +581,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
