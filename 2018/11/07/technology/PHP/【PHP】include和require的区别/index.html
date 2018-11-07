@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Laravel 5.x Scaffold Generator代码生成器 | 爱在西元前</title>
+  <title>【PHP】include和require的区别 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Laravel,php">
-<meta name="keywords" content="Laravel">
+  <meta name="description" content="php">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Laravel 5.x Scaffold Generator代码生成器">
-<meta property="og:url" content="http://yoursite.com/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/index.html">
+<meta property="og:title" content="【PHP】include和require的区别">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/technology/PHP/【PHP】include和require的区别/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="Laravel,php">
+<meta property="og:description" content="php">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T12:53:06.330Z">
+<meta property="og:updated_time" content="2018-11-07T14:59:54.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laravel 5.x Scaffold Generator代码生成器">
-<meta name="twitter:description" content="Laravel,php">
+<meta name="twitter:title" content="【PHP】include和require的区别">
+<meta name="twitter:description" content="php">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/PHP/【PHP】include和require的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Laravel 5.x Scaffold Generator代码生成器
+      【PHP】include和require的区别
     </h1>
   
 
@@ -181,26 +181,38 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/11/07/technology/PHP/【PHP】include和require的区别/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:49:11.165Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
+        <a href="/2018/11/07/technology/PHP/【PHP】include和require的区别/" class="archive-article-date">
+  	<time datetime="2018-11-07T15:00:13.320Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>代码生成器能让你通过执行一条 Artisan 命令，完成注册路由、新建模型、新建表单验证类、新建资源控制器以及所需视图文件等任务，<br>不仅约束了项目开发的风格，还能极大地提高我们的开发效率。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><ol>
-<li>通过 Composer 安装<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer <span class="built_in">require</span> <span class="string">"summerblue/generator:~0.5"</span> <span class="comment">--dev</span></span><br></pre></td></tr></table></figure>
+        <h3 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h3><blockquote>
+<ul>
+<li>incluce在用到时加载</li>
+<li>require在一开始就加载<br>如果可能执行多次的代码，则使用require()效率比较高<a id="more"></a>
 </li>
-</ol>
-<a id="more"></a>
-<ol start="2">
-<li>生成脚手架<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:scaffold Topic --schema="title:string:<span class="keyword">index</span>,body:text,user_id:integer:unsigned:<span class="keyword">index</span>,category_id:integer:unsigned:<span class="keyword">index</span>,reply_count:integer:unsigned:default(<span class="number">0</span>),view_count:integer:unsigned:default(<span class="number">0</span>),last_reply_user_id:integer:unsigned:default(<span class="number">0</span>),<span class="keyword">order</span>:integer:unsigned:default(<span class="number">0</span>),excerpt:text,slug:<span class="keyword">string</span>:nullable<span class="string">"</span></span><br></pre></td></tr></table></figure>
+</ul>
+</blockquote>
+<h3 id="报错区别"><a href="#报错区别" class="headerlink" title="报错区别"></a>报错区别</h3><blockquote>
+<ul>
+<li>include引入文件的时候，如果碰到错误，会给出提示，并继续运行下边的代码。</li>
+<li>require引入文件的时候，如果碰到错误，会给出提示，并停止运行下边的代码。</li>
+</ul>
+</blockquote>
+<h3 id="条件引用"><a href="#条件引用" class="headerlink" title="条件引用"></a>条件引用</h3><p>include()是有条件包含函数，而require()则是无条件包含函数。</p>
+<ol>
+<li><p>下面例子，如果$some为真，则包含somefile.php</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>($some)&#123;</span><br><span class="line">　　<span class="keyword">include</span> <span class="string">'somefile.php'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>require是无条件的，所以无论$something为何值，都会把somefile.php包含进文件里</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>($something)&#123;</span><br><span class="line">　　<span class="keyword">require</span> <span class="string">'somefile.php'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -247,7 +259,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Laravel</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
       		
 		</ul>
@@ -314,7 +326,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/23/technology/Laravel/【扩展】Laravel 5.x Scaffold Generator代码生成器/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/07/technology/PHP/【PHP】include和require的区别/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +340,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/23/technology/Laravel/【扩展】Laravel-permission权限管理扩展包/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Laravel-permission权限管理扩展包
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/09/technology/Laravel/【扩展】hieu-le active判断导航元素的active状态/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hieu-le active判断导航元素的active状态</div>
+    <a href="/2018/10/28/technology/Laravel/【Laravel】事件event和任务job区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【Laravel】事件event和任务job区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
