@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="php">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-28T14:02:33.960Z">
+<meta property="og:updated_time" content="2018-11-11T13:02:21.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【PHP】PHP-FPM">
 <meta name="twitter:description" content="php">
@@ -193,10 +193,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="cgi、fast-cgi协议"><a href="#cgi、fast-cgi协议" class="headerlink" title="cgi、fast-cgi协议"></a>cgi、fast-cgi协议</h3><p>早期的webserver只能处理html等静态文件，直至后来出现了PHP等动态语言。这时就需要PHP解释器和webserver进行通信。<br><a id="more"></a><br>为了解决不同的语言解释器(如php、python解释器)与webserver的通信，于是出现了cgi协议。只要你按照cgi协议去编写<br>程序，就能实现语言解释器与webwerver的通信。如php-cgi程序。</p>
-<p>但是问题来了，webserver每次收到一个请求，都会fork一个cgi进程，请求结束再kill掉这个进程。这样有10000个请求，<br>就需要fork、kill php-cgi进程10000次。资源被浪费掉了，于是出现了cgi的改良版本，fast-cgi。</p>
-<p>fast-cgi 每次处理完请求后，不会kill掉这个进程，而是保留这个进程，使这个进程可以一次处理多个请求。这样每次就<br>不用重新fork一个进程了，大大提高了效率。</p>
-<h3 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h3><p>php的解释器是php-cgi，php-cgi只是个CGI程序，但是它只能解析请求，返回结果，不会进程管理，所以需要能够调度<br>php-cgi进程的程序。php-fpm就是这个进程管理器</p>
+        <h3 id="cgi、fast-cgi协议"><a href="#cgi、fast-cgi协议" class="headerlink" title="cgi、fast-cgi协议"></a>cgi、fast-cgi协议</h3><p>早期的webserver只能处理html等静态文件，直至后来出现了PHP等动态语言。这时就需要PHP解释器和webserver进行通信。<br><a id="more"></a><br>为了解决不同的语言解释器(如php、python解释器)与webserver的通信，于是出现了cgi协议。只要你按照cgi协议去编写程序，就能实现语言解释器与webwerver的通信。如php-cgi程序。</p>
+<p>但是问题来了，webserver每次收到一个请求，都会fork一个cgi进程，请求结束再kill掉这个进程。这样有10000个请求，就需要fork、kill php-cgi进程10000次。资源被浪费掉了，于是出现了cgi的改良版本，fast-cgi。</p>
+<p>fast-cgi 每次处理完请求后，不会kill掉这个进程，而是保留这个进程，使这个进程可以一次处理多个请求。这样每次就不用重新fork一个进程了，大大提高了效率。</p>
+<h3 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h3><p>php的解释器是php-cgi，php-cgi只是个CGI程序，但是它只能解析请求，返回结果，不会进程管理，所以需要能够调度php-cgi进程的程序。php-fpm就是这个进程管理器</p>
 <p>php-fpm即php-Fastcgi Process Manager，<br>fastcgi是一个协议，php-fpm是针对PHP实现了这个协议，并提供了进程管理的功能。<br>但是PHP-fpm仅仅是个“PHP Fastcgi 进程管理器”, 它仍会调用PHP解释器本身来处理请求，PHP解释器(在Windows下)就是php-cgi.exe.</p>
 <p>进程包含 master 进程和 worker 进程两种进程。<br>master 进程只有一个，负责监听端口，接收来自 Web Server 的请求，而 worker 进程则一般有多个(具体数量根据实际需要配置)，<br>每个进程内部都嵌入了一个 PHP 解释器，是 PHP 代码真正执行的地方。</p>
 
@@ -563,11 +563,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,11 +575,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
