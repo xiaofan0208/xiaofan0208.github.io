@@ -12,11 +12,11 @@
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【PHP】日期处理函数">
-<meta property="og:url" content="http://yoursite.com/2018/10/28/technology/PHP/【PHP】日期处理函数/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/technology/PHP/【PHP】日期处理函数/index.html">
 <meta property="og:site_name" content="爱在西元前">
 <meta property="og:description" content="php">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-28T14:03:15.028Z">
+<meta property="og:updated_time" content="2018-11-22T14:21:51.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【PHP】日期处理函数">
 <meta name="twitter:description" content="php">
@@ -181,12 +181,12 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/10/28/technology/PHP/【PHP】日期处理函数/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/11/22/technology/PHP/【PHP】日期处理函数/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/10/28/technology/PHP/【PHP】日期处理函数/" class="archive-article-date">
-  	<time datetime="2018-10-28T14:03:22.103Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
+        <a href="/2018/11/22/technology/PHP/【PHP】日期处理函数/" class="archive-article-date">
+  	<time datetime="2018-11-22T14:20:32.540Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-22</time>
 </a>
         
       </header>
@@ -224,7 +224,7 @@
 <h3 id="mktime"><a href="#mktime" class="headerlink" title="mktime()"></a>mktime()</h3><p>mktime 返回一个日期的 UNIX 时间戳 , 函数用法如下<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mktime(<span class="built_in">hour</span>,<span class="built_in">minute</span>,<span class="built_in">second</span>,<span class="built_in">month</span>,<span class="built_in">day</span>,<span class="built_in">year</span>,is_dst)</span><br></pre></td></tr></table></figure></p>
 <h3 id="time"><a href="#time" class="headerlink" title="time()"></a>time()</h3><p>time() 获取当前Unix秒数时间戳 , 这个函数经常用来计算脚本运行的耗时</p>
 <h3 id="时间戳和时间字符串"><a href="#时间戳和时间字符串" class="headerlink" title="时间戳和时间字符串"></a>时间戳和时间字符串</h3><p>使用 date() 函数，可以将时间戳按照指定的格式格式化为时间字符串<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$<span class="built_in">time</span> = <span class="built_in">time</span>();              <span class="comment"> // 当前时间戳  1540198624</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">date</span>(<span class="string">'Y-m-d H:i:s'</span>, $<span class="built_in">time</span>); <span class="comment"> // 2018-10-22 16:57:04</span></span><br></pre></td></tr></table></figure></p>
-
+<h3 id="时间戳和毫秒转换"><a href="#时间戳和毫秒转换" class="headerlink" title="时间戳和毫秒转换"></a>时间戳和毫秒转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  返回当前的毫秒时间戳.</span></span><br><span class="line"><span class="comment"> *  32为系统中PHP的int最大值小于毫秒数，所以不能使用int类型，可以使用浮点数或者BIGINT.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMillisecond</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">list</span>($msec, $sec) = explode(<span class="string">' '</span>, microtime());</span><br><span class="line">    $msectime = (float) sprintf(<span class="string">'%.0f'</span>, (floatval($msec) + floatval($sec)) * <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $msectime;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 时间戳转日期格式 ：</span></span><br><span class="line"><span class="comment"> * 精确到毫秒，x代表毫秒.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMsecToMescdate</span><span class="params">($msectime)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $msectime = $msectime * <span class="number">0.001</span>;</span><br><span class="line">    <span class="keyword">if</span> (strstr($msectime, <span class="string">'.'</span>)) &#123;</span><br><span class="line">        sprintf(<span class="string">'%01.3f'</span>, $msectime);</span><br><span class="line">        <span class="keyword">list</span>($usec, $sec) = explode(<span class="string">'.'</span>, $msectime);</span><br><span class="line">        $sec = str_pad($sec, <span class="number">3</span>, <span class="string">'0'</span>, STR_PAD_RIGHT);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $usec = $msectime;</span><br><span class="line">        $sec = <span class="string">'000'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $date = date(<span class="string">'Y-m-d H:i:s.x'</span>, $usec);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $mescdate = str_replace(<span class="string">'x'</span>, $sec, $date);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$t = getMillisecond();       <span class="comment">// 1542851947306</span></span><br><span class="line"><span class="keyword">echo</span> $t.<span class="string">'&lt;br&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> getMsecToMescdate($t);  <span class="comment">// 2018-11-22 09:59:07.306</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -335,7 +335,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/28/technology/PHP/【PHP】日期处理函数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/22/technology/PHP/【PHP】日期处理函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +349,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/28/technology/PHP/【PHP】PHP-FPM/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【PHP】PHP-FPM
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/28/technology/MySQL/【MySQL必知必会】创建和操作表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【MySQL必知必会】创建和操作表</div>
+    <a href="/2018/11/21/technology/PHP/【PHP】http请求常用方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【PHP】http请求常用方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -588,15 +579,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +591,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Laravel</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
