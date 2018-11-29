@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>【深入PHP面向对象模式与实践】笔记(单例模式) | 爱在西元前</title>
+  <title>form编码方式application/x-www-form-urlencoded和multipart/form-data的区别 | 爱在西元前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="php">
-<meta name="keywords" content="PHP">
+  <meta name="description" content="HTML，form编码方式">
+<meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【深入PHP面向对象模式与实践】笔记(单例模式)">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/index.html">
+<meta property="og:title" content="form编码方式application&#x2F;x-www-form-urlencoded和multipart&#x2F;form-data的区别">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/technology/HTML/【HTML】form编码方式x-www-form-urlencoded和form-data的区别/index.html">
 <meta property="og:site_name" content="爱在西元前">
-<meta property="og:description" content="php">
+<meta property="og:description" content="HTML，form编码方式">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-30T15:12:21.224Z">
+<meta property="og:updated_time" content="2018-11-29T14:17:48.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【深入PHP面向对象模式与实践】笔记(单例模式)">
-<meta name="twitter:description" content="php">
+<meta name="twitter:title" content="form编码方式application&#x2F;x-www-form-urlencoded和multipart&#x2F;form-data的区别">
+<meta name="twitter:description" content="HTML，form编码方式">
   
     <link rel="alternative" href="/atom.xml" title="爱在西元前" type="application/atom+xml">
   
@@ -164,14 +164,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-technology/HTML/【HTML】form编码方式x-www-form-urlencoded和form-data的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      【深入PHP面向对象模式与实践】笔记(单例模式)
+      form编码方式application/x-www-form-urlencoded和multipart/form-data的区别
     </h1>
   
 
@@ -181,20 +181,34 @@
 
 
   <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/" class="pageViews">0</span>次
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2018/11/29/technology/HTML/【HTML】form编码方式x-www-form-urlencoded和form-data的区别/" class="pageViews">0</span>次
   </a>
 
         
-        <a href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/" class="archive-article-date">
-  	<time datetime="2018-09-30T15:14:49.639Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
+        <a href="/2018/11/29/technology/HTML/【HTML】form编码方式x-www-form-urlencoded和form-data的区别/" class="archive-article-date">
+  	<time datetime="2018-11-29T14:15:36.951Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>示例：<br><a id="more"></a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Preferences</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $props = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> $instance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="keyword">self</span>::$instance)) &#123;</span><br><span class="line">            <span class="keyword">self</span>::$instance = <span class="keyword">new</span> Preferences();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setProperty</span><span class="params">($key, $val)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;props[$key] = $val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getProperty</span><span class="params">($key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;props[$key];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$pref = Preferences::getInstance();</span><br><span class="line">$pref-&gt;setProperty(<span class="string">'name'</span>, <span class="string">'wang'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">unset</span>($pref); <span class="comment">// 解除引用</span></span><br><span class="line"></span><br><span class="line">$pref2 = Preferences::getInstance();</span><br><span class="line"><span class="keyword">echo</span> $pref2-&gt;getProperty(<span class="string">'name'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>// 输出： wang</p>
+        <h3 id="form编码方式application-x-www-form-urlencoded和multipart-form-data的区别"><a href="#form编码方式application-x-www-form-urlencoded和multipart-form-data的区别" class="headerlink" title="form编码方式application/x-www-form-urlencoded和multipart/form-data的区别"></a>form编码方式application/x-www-form-urlencoded和multipart/form-data的区别</h3><p>form表单有个enctype属性，用于指定数据编码方式，有三种如下：</p>
+<blockquote>
+<ul>
+<li>application/x-www-form-urlencoded : 表单数据编码为键值对，&amp;分隔</li>
+<li>multipart/form-data : 表单数据编码为一条消息，每个控件对应消息的一部分</li>
+<li>text/plain : 表单数据以纯文本形式进行编码<a id="more"></a>
+</li>
+</ul>
+</blockquote>
+<h4 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h4><p>form的enctype的编码方式，常用有两种：</p>
+<ol>
+<li><p>application/x-www-form-urlencoded 为默认编码方式，在form的action为get时，浏览器将表单数据<br>编码为(name1=value1&amp;name2=value2..)，然后将这个字符串append到url后面，用?分隔，跳转<br>到这个新的url</p>
+</li>
+<li><p>当form的action为post时，浏览器将form数据封装到http body中，然后发送到server。<br>在没有type=file时候，用默认的 application/x-www-form-urlencoded 就行。<br>在有 type=file 时候，要用multipart/form-data编码方式。浏览器会把表单以控件为单位分割，<br>并且为每个部分加上Content-Dispositon(form-data或file)、Content-Type(默认text/plain)、<br>name(控件name)等信息，并加上分割符(boundary)。</p>
+</li>
+</ol>
 
       
 
@@ -239,7 +253,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -306,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(单例模式)/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/29/technology/HTML/【HTML】form编码方式x-www-form-urlencoded和form-data的区别/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +334,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(二)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【深入PHP面向对象模式与实践】笔记(二)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/30/technology/PHP/【深入PHP面向对象模式与实践】笔记(组合模式)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【深入PHP面向对象模式与实践】笔记(组合模式)</div>
+    <a href="/2018/11/22/technology/PHP/【PHP】日期处理函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【PHP】日期处理函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
